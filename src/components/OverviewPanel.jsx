@@ -1,6 +1,10 @@
 import CrestCounter from "./OverviewPanel/StudentCounter";
 
 export default function () {
+  const houseCounters = ['gryffindor', 'slytherin', 'hufflepuff', 'ravenclaw'].map((house) => 
+    <CrestCounter type="crests" src={house} key={house} />
+  )
+
   return (
     <aside>
       <div className="lg:fixed w-full lg:max-w-[13rem] grid grid-cols-2 lg:grid-cols-1 lg:gap-4 p-4 text-center">
@@ -16,16 +20,14 @@ export default function () {
               <CrestCounter type="badges" src='expelled'/>
             </div>
             <div className="flex justify-center">
-              <span className="w-8 h-8 inline-grid place-content-center">
-                <img className="w-auto h-8 grid-center opacity-50"/>
-                <span className="text-2xl grid-center z-10">32</span>
-              </span>
+              { houseCounters }
             </div>
           </div>
         </div>
         <img src="./images/crests/hogwarts.svg" alt="Hogwarts Crest" className="w-full max-w-[12rem] mx-auto col-span-2 xs:col-span-1"/>      
         <div className="text-xl sm:text-2xl mt-4 lg:mt-0 col-span-2 lg:col-span-1 lg:row-start-2 lg:row-end-2">
           <p className="inline-block">Currently Displayed: </p>
+          <span className="inline-block w-8 ml-2 text-left">32</span>
         </div>
       </div>
     </aside>
