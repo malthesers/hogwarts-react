@@ -1,9 +1,17 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import OverviewPanel from './components/OverviewPanel/OverviewPanel'
 import StudentList from './components/StudentList'
+import getFormattedStudents from './utils/reformatting'
 
 function App() {
   const [theme, setTheme] = useState('hogwarts')
+  const [students, setStudents] = useState([])
+
+
+  useEffect(() => {
+    const formattedStudents = getFormattedStudents()
+    setStudents(formattedStudents)
+  }, [])
 
   return (
     <main className='bg-hogwarts-dark text-hogwarts-accent font-merinda min-h-screen pb-20'>
