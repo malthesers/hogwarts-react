@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import OverviewPanel from './components/OverviewPanel/OverviewPanel'
-import StudentList from './components/StudentList'
+import StudentList from './components/StudentList/StudentList'
 import getFormattedStudents from './utils/reformatting'
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
     <main className='bg-hogwarts-dark text-hogwarts-accent font-merinda min-h-screen pb-20'>
       <section className='max-w-6xl mx-auto lg:grid-cols-[13rem_auto]'>
         <OverviewPanel theme={theme} students={students} />
-        <StudentList />
+        <StudentList students={students} />
       </section>
     </main>
   )
