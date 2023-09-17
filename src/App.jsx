@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import OverviewPanel from './components/OverviewPanel'
+import OverviewPanel from './components/OverviewPanel/OverviewPanel'
 import StudentList from './components/StudentList'
 
 function App() {

@@ -1,10 +1,6 @@
-import CrestCounter from "./OverviewPanel/StudentCounter";
+import CrestCounter from "./StudentCounter";
 
 export default function ({ theme }) {
-  const houseCounters = ['gryffindor', 'slytherin', 'hufflepuff', 'ravenclaw'].map((house) => 
-    <CrestCounter type="crests" src={house} key={house} />
-  )
-
   return (
     <aside>
       <div className="lg:fixed w-full lg:max-w-[13rem] grid grid-cols-2 lg:grid-cols-1 lg:gap-4 p-4 text-center">
@@ -20,7 +16,10 @@ export default function ({ theme }) {
               <CrestCounter type="badges" src='expelled'/>
             </div>
             <div className="flex justify-center">
-              { houseCounters }
+              <CrestCounter type="crests" src='gryffindor'/>
+              <CrestCounter type="crests" src='slytherin'/>
+              <CrestCounter type="crests" src='hufflepuff'/>
+              <CrestCounter type="crests" src='ravenclaw'/>
             </div>
           </div>
         </div>
