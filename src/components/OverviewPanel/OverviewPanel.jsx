@@ -1,6 +1,6 @@
 import CrestCounter from "./StudentCounter";
 
-export default function ({ theme }) {
+export default function ({ theme, students }) {
   return (
     <aside>
       <div className="lg:fixed w-full lg:max-w-[13rem] grid grid-cols-2 lg:grid-cols-1 lg:gap-4 p-4 text-center">
@@ -26,7 +26,7 @@ export default function ({ theme }) {
         <img src={`./images/crests/${theme}.svg`} alt="Hogwarts Crest" className="w-full max-w-[12rem] mx-auto col-span-2 xs:col-span-1"/>      
         <div className="text-xl sm:text-2xl mt-4 lg:mt-0 col-span-2 lg:col-span-1 lg:row-start-2 lg:row-end-2">
           <p className="inline-block">Currently Displayed: </p>
-          <span className="inline-block w-8 ml-2 text-left">32</span>
+          <span className="inline-block w-8 ml-2 text-left">{students.length}</span>
         </div>
       </div>
     </aside>
