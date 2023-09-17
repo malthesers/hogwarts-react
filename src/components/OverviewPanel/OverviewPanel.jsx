@@ -1,8 +1,6 @@
 import CrestCounter from "./StudentCounter";
 
 export default function ({ theme, students }) {
-
-
   return (
     <aside>
       <div className="lg:fixed w-full lg:max-w-[13rem] grid grid-cols-2 lg:grid-cols-1 lg:gap-4 p-4 text-center">

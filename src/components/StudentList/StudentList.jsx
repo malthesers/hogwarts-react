@@ -1,4 +1,4 @@
-import StudentCard from "./StudentCard"
+import StudentCard from "./StudentCard/StudentCard"
 
 export default function StudentList ({ students }) {
   const studentList = students.map(student =>
