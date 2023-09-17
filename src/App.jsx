@@ -4,14 +4,9 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
-      <h1 className=' text-black'>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-      </div>
-    </>
+    <main className='bg-hogwarts-dark text-hogwarts-accent min-h-screen pb-20'>
+      <h1>Vite + React</h1>
+    </main>
   )
 }
 
