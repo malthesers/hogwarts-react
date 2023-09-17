@@ -1,6 +1,6 @@
 import CrestCounter from "./OverviewPanel/StudentCounter";
 
-export default function () {
+export default function ({ theme }) {
   const houseCounters = ['gryffindor', 'slytherin', 'hufflepuff', 'ravenclaw'].map((house) => 
     <CrestCounter type="crests" src={house} key={house} />
   )
@@ -24,7 +24,7 @@ export default function () {
             </div>
           </div>
         </div>
-        <img src="./images/crests/hogwarts.svg" alt="Hogwarts Crest" className="w-full max-w-[12rem] mx-auto col-span-2 xs:col-span-1"/>      
+        <img src={`./images/crests/${theme}.svg`} alt="Hogwarts Crest" className="w-full max-w-[12rem] mx-auto col-span-2 xs:col-span-1"/>      
         <div className="text-xl sm:text-2xl mt-4 lg:mt-0 col-span-2 lg:col-span-1 lg:row-start-2 lg:row-end-2">
           <p className="inline-block">Currently Displayed: </p>
           <span className="inline-block w-8 ml-2 text-left">32</span>
