@@ -1,13 +1,12 @@
-import { createContext, useContext, useEffect, useMemo, useState } from "react"
+import { createContext, useContext, useEffect, useState } from "react"
 import { useTheme } from "./ThemeContext"
 import getFormattedStudents from "../utils/reformatting"
 
-const AllStudentsContext = createContext()
+const StudentsContext = createContext()
 const DisplayedStudentsContext = createContext()
 
-
-export function useAllStudents() {
-  return useContext(AllStudentsContext)
+export function useStudents() {
+  return useContext(StudentsContext)
 }
 
 export function useDisplayedStudents() {
@@ -15,26 +14,27 @@ export function useDisplayedStudents() {
 }
 
 export function StudentsProvider({ children }) {
-  const [allStudents, setAllStudents] = useState([])
+  const [students, setStudents] = useState([])
   const [displayedStudents, setDisplayedStudents] = useState([])
 
   const theme = useTheme()
 
   useEffect(() => {
     const formattedStudents = getFormattedStudents()
-    setAllStudents(formattedStudents)
+    setStudents(formattedStudents)
   }, [])
 
+  // Calculate displayed students
   useEffect(() => {
-    const students = [ ...allStudents ].filter(student => student.house.toLowerCase() === theme || 'hogwarts' === theme)
-    setDisplayedStudents(students)
-  }, [allStudents, theme])
+    const filteredStudents = [ ...students ].filter(student => student.house.toLowerCase() === theme || 'hogwarts' === theme)
+    setDisplayedStudents(filteredStudents)
+  }, [students, theme])
 
   return (
-    <AllStudentsContext.Provider value={allStudents}>
+    <StudentsContext.Provider value={students}>
       <DisplayedStudentsContext.Provider value={displayedStudents}>
         {children}
       </DisplayedStudentsContext.Provider>
-    </AllStudentsContext.Provider>
+    </StudentsContext.Provider>
   )
 }

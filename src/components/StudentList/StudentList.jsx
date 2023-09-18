@@ -1,4 +1,4 @@
-import { useAllStudents, useDisplayedStudents } from "../../context/StudentsContext"
+import { useDisplayedStudents } from "../../context/StudentsContext"
 import StudentCard from "./StudentCard/StudentCard"
 
 export default function StudentList () {

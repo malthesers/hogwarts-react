@@ -1,9 +1,9 @@
-import { useAllStudents } from "../../context/StudentsContext";
+import { useStudents } from "../../context/StudentsContext";
 import { useTheme } from "../../context/ThemeContext"
 import StudentCounter from "./StudentCounter";
 
 export default function () {
-  const students = useAllStudents()
+  const students = useStudents()
   const theme = useTheme()
 
   return (

@@ -1,10 +1,10 @@
 import { useRef } from "react"
-import { useAllStudents } from "../../../../context/StudentsContext"
+import { useStudents } from "../../../../context/StudentsContext"
 
 export default function PrefectButton({ student }) {
   const button = useRef(null)
-  const allStudents = useAllStudents()
-  const housePrefects = allStudents.filter(otherStudent => otherStudent.prefect && otherStudent.house === student.house)
+  const students = useStudents()
+  const housePrefects = students.filter(otherStudent => otherStudent.prefect && otherStudent.house === student.house)
 
   function togglePrefect() {
     if (student.prefect) {
