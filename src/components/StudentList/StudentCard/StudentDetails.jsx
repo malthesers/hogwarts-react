@@ -1,4 +1,4 @@
-import { StudentButtons } from './StudentButtons';
+import { StudentButtons } from './StudentButtons/StudentButtons';
 export default function StudentDetails({ student }) {
   return (
     <div className="relative max-h-96 text-xl overflow-hidden">
