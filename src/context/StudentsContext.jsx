@@ -66,5 +66,14 @@ function studentsReducer(students, action) {
         }
       })
     }
+    case 'toggled_inquisitor': {
+      return students.map(student => {
+        if (student.id === action.student.id) {
+          return {...action.student, inquisitor: !action.student.inquisitor}
+        } else {
+          return student
+        }
+      })
+    }
   }
 }

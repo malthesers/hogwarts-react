@@ -1,11 +1,15 @@
 import { useRef } from "react"
+import { useStudentDispatchContext } from "../../../../context/StudentsContext"
 
 export default function InquisitorButton({ student }) {
   const button = useRef(null)
+  const dispatch = useStudentDispatchContext()
+
+  let isHacked = false //remove later
 
   function toggleInquisitor() {
     if (student.bloodStatus === 'Pure-blood' || student.house === 'Slytherin') {
-      student.inquisitor = !student.inquisitor
+      dispatch({ type: 'toggled_inquisitor', student: student })
   
       if (student.inquisitor && isHacked) {
         setTimeout(() => {
