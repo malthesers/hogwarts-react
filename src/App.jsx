@@ -11,6 +11,10 @@ function App() {
 
   const theme = useContext(ThemeContext)
 
+  function toggleHouseSelector() {
+    setShowHouseSelector(showHouseSelector => !showHouseSelector)
+  }
+
 
   useEffect(() => {
     const formattedStudents = getFormattedStudents()
@@ -23,7 +27,7 @@ function App() {
         <OverviewPanel students={students} />
         <StudentList students={students} />
       </section>
-      <HouseSelector showHouseSelector={showHouseSelector} />
+      <HouseSelector toggleHouseSelector={toggleHouseSelector} showHouseSelector={showHouseSelector} />
     </main>
   )
 }
