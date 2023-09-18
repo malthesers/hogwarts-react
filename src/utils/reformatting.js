@@ -5,10 +5,12 @@ import familyData from "../data/families.json";
 
 export default function getFormattedStudents() {
   let students = [];
+  let index = 1;
 
   studentsData.forEach((student) => {
     const formattedStudent = formatStudent(student, studentsData, familyData);
-    students.push(formattedStudent);
+    students.push({ ...formattedStudent, id: index });
+    index++;
   });
 
   return students;

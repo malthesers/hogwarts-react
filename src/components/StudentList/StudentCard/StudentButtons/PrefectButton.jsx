@@ -16,6 +16,7 @@ export default function PrefectButton({ student }) {
       button.current.classList.add('shake')
       // addToMessages('house', student.house, isCursed)
     } else {
+      console.log('yo')
       student.prefect = true
     }
   }
