@@ -1,8 +1,8 @@
-import { useStudentList } from "../../context/StudentsContext"
+import { useAllStudents } from "../../context/StudentsContext"
 import StudentCard from "./StudentCard/StudentCard"
 
 export default function StudentList () {
-  const students = useStudentList()
+  const students = useAllStudents()
 
   return (
     <section className="p-4">
