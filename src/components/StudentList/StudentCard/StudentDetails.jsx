@@ -23,10 +23,8 @@ export default function StudentDetails({ student }) {
           <span>+</span>
         </button>
         <button className="border-2 p-2 flex justify-between relative sm:col-span-2 md:col-span-1">
-          <p>Expal Student</p>
-          {
-        /* <img src="../assets/icons/howler.svg" alt="howler expulsion icon" className="absolute w-20 rotate-[10deg] top-[-7%] right-[3%]" /> */
-      }
+          <p>Expel Student</p>
+          <img src="../assets/icons/howler.svg" alt="howler expulsion icon" className="absolute w-20 rotate-[10deg] top-[-7%] right-[3%]" />
         </button>
       </div>
     </div>
