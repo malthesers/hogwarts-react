@@ -1,15 +1,18 @@
 import { useRef } from "react"
+import { useAllStudents } from "../../../../context/StudentsContext"
 
 export default function PrefectButton({ student }) {
   const button = useRef(null)
+  const allStudents = useAllStudents()
+  const housePrefects = allStudents.filter(otherStudent => otherStudent.prefect && otherStudent.house === student.house)
 
   function togglePrefect() {
     if (student.prefect) {
       student.prefect = false
-    } else if (housePrefects.value.length === 2) {
+    } else if (housePrefects.length === 2) {
       button.current.classList.add('shake')
       // addToMessages('house', student.house, isCursed)
-    } else if (housePrefects.value.some(student => student.gender === student.gender)) {
+    } else if (housePrefects.some(student => student.gender === student.gender)) {
       button.current.classList.add('shake')
       // addToMessages('house', student.house, isCursed)
     } else {

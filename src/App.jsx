@@ -1,6 +1,5 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useTheme } from './context/ThemeContext'
-import getFormattedStudents from './utils/reformatting'
 import OverviewPanel from './components/OverviewPanel/OverviewPanel'
 import StudentList from './components/StudentList/StudentList'
 import HouseSelector from './components/HouseSelector/HouseSelector'
