@@ -20,7 +20,12 @@ export default function InquisitorButton({ student }) {
   }
 
   return (
-    <button onClick={toggleInquisitor} ref={button} className="border-2 p-2 flex justify-between">
+    <button
+      ref={button}
+      onClick={toggleInquisitor}
+      onAnimationEnd={() => button.current.classList.remove('shake')}
+      className="border-2 p-2 flex justify-between"
+    >
       <p>Inquisitor</p>
       <span>{ student.inquisitor ? '-' : '+' }</span>
     </button>
