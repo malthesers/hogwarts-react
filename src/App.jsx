@@ -9,7 +9,7 @@ function App() {
   const [students, setStudents] = useState([])
   const [showHouseSelector, setShowHouseSelector] = useState(false)
 
-  const theme = useContext(ThemeContext)
+  const [theme, setTheme] = useState('hogwarts')
 
   function toggleHouseSelector() {
     setShowHouseSelector(showHouseSelector => !showHouseSelector)
@@ -22,13 +22,15 @@ function App() {
   }, [])
 
   return (
-    <main className={`bg-${theme}-light text-${theme}-accent ` + 'font-merinda min-h-screen pb-20'}>
-      <section className='max-w-6xl mx-auto grid lg:grid-cols-[13rem_auto]'>
-        <OverviewPanel students={students} />
-        <StudentList students={students} />
-      </section>
-      <HouseSelector toggleHouseSelector={toggleHouseSelector} showHouseSelector={showHouseSelector} />
-    </main>
+    <ThemeContext.Provider value={theme}>
+      <main className={`bg-${theme}-light text-${theme}-accent ` + 'font-merinda min-h-screen pb-20'}>
+        <section className='max-w-6xl mx-auto grid lg:grid-cols-[13rem_auto]'>
+          <OverviewPanel students={students} />
+          <StudentList students={students} />
+        </section>
+        <HouseSelector toggleHouseSelector={toggleHouseSelector} showHouseSelector={showHouseSelector} />
+      </main>
+    </ThemeContext.Provider>
   )
 }
 
