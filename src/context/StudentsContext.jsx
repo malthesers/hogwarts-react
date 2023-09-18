@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from "react"
+import { createContext, useContext, useEffect, useMemo, useState } from "react"
 import { useTheme } from "./ThemeContext"
 import getFormattedStudents from "../utils/reformatting"
 
@@ -25,11 +25,10 @@ export function StudentsProvider({ children }) {
     setAllStudents(formattedStudents)
   }, [])
 
-  // useEffect(() => {
-  //   console.log
-  //   const students = [ ...allStudents ].map(student => student.house.toLowerCase() === theme || 'hogwarts' === theme)
-  //   setDisplayedStudents(students)
-  // }, [theme])
+  useEffect(() => {
+    const students = [ ...allStudents ].filter(student => student.house.toLowerCase() === theme || 'hogwarts' === theme)
+    setDisplayedStudents(students)
+  }, [allStudents, theme])
 
   return (
     <AllStudentsContext.Provider value={allStudents}>
