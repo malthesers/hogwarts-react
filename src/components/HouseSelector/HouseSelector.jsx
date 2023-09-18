@@ -17,13 +17,9 @@ export default function HouseSelector({ showHouseSelector, toggleHouseSelector }
         <img id="ravenclaw-colour" className="hogwarts-crest-blue" src="src/assets/hogwarts-parts/hogwarts-colours/hogwarts-blue.svg"/>
         <CrestPart house='gryffindor' />
         <CrestPart house='slytherin' />
+        <CrestPart house='hufflepuff-body'/>
+        <CrestPart house='hufflepuff' />
         <CrestPart house='ravenclaw' />
-        {/* <img onMouseEnter={() => animateHouse('gryffindor')} id="grsyffindor-part" className="hogwarts-crest-gryffindor" src="src/assets/hogwarts-parts/hogwarts-mascots/hogwarts-gryffindor.svg"/> */}
-        {/* <img onMouseEnter={() => animateHouse('slytherin')} id="slytherin-part" className="hogwarts-crest-slytherin" src="src/assets/hogwarts-parts/hogwarts-mascots/hogwarts-slytherin.svg"/>
-        <img onMouseEnter={() => animateHouse('hufflepuff')} className="hogwarts-crest-hufflepuff-body" src="src/assets/hogwarts-parts/hogwarts-mascots/hogwarts-hufflepuff-body.svg"/>
-        <img onMouseEnter={() => animateHouse('hufflepuff')} id="hufflepuff-part" className="hogwarts-crest-hufflepuff-head" src="src/assets/hogwarts-parts/hogwarts-mascots/hogwarts-hufflepuff-head.svg"/>
-        <img onMouseEnter={() => animateHouse('ravenclaw')} id="ravenclaw-part" className="hogwarts-crest-ravenclaw" src="src/assets/hogwarts-parts/hogwarts-mascots/hogwarts-ravenclaw.svg"/>
-        <img onMouseEnter={() => animateHouse('hogwarts')} id="hogwarts-part" className="hogwarts-crest-insignia" src="src/assets/hogwarts-parts/hogwarts-insignia.svg"/> */}
       </div>
     </footer>
   )
