@@ -1,7 +1,9 @@
+import { useStudentList } from "../../context/StudentsContext";
 import { useTheme } from "../../context/ThemeContext"
 import CrestCounter from "./StudentCounter";
 
-export default function ({ students }) {
+export default function () {
+  const students = useStudentList()
   const theme = useTheme()
 
   return (
