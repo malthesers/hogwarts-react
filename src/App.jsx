@@ -1,11 +1,15 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
+import { ThemeContext } from './context/ThemeContext'
+import getFormattedStudents from './utils/reformatting'
 import OverviewPanel from './components/OverviewPanel/OverviewPanel'
 import StudentList from './components/StudentList/StudentList'
-import getFormattedStudents from './utils/reformatting'
+import HouseSelector from './components/HouseSelector'
 
 function App() {
-  const [theme, setTheme] = useState('hogwarts')
   const [students, setStudents] = useState([])
+  const [showHouseSelector, setShowHouseSelector] = useState(false)
+
+  const theme = useContext(ThemeContext)
 
 
   useEffect(() => {
@@ -14,11 +18,12 @@ function App() {
   }, [])
 
   return (
-    <main className='bg-hogwarts-dark text-hogwarts-accent font-merinda min-h-screen pb-20'>
+    <main className={`bg-${theme}-light text-${theme}-accent ` + 'font-merinda min-h-screen pb-20'}>
       <section className='max-w-6xl mx-auto grid lg:grid-cols-[13rem_auto]'>
         <OverviewPanel students={students} />
         <StudentList students={students} />
       </section>
+      <HouseSelector showHouseSelector={showHouseSelector} />
     </main>
   )
 }
