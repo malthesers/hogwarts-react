@@ -20,6 +20,7 @@ export default function HouseSelector({ showHouseSelector, toggleHouseSelector }
         <CrestPart house='hufflepuff-body'/>
         <CrestPart house='hufflepuff' />
         <CrestPart house='ravenclaw' />
+        <CrestPart house='hogwarts' />
       </div>
     </footer>
   )
