@@ -1,6 +1,6 @@
 import { useStudentList } from "../../context/StudentsContext";
 import { useTheme } from "../../context/ThemeContext"
-import CrestCounter from "./StudentCounter";
+import StudentCounter from "./StudentCounter";
 
 export default function () {
   const students = useStudentList()
@@ -17,14 +17,14 @@ export default function () {
           <div>
             <p className="text-lg lg:text-xl mb-2">Students</p>
             <div className="flex justify-center gap-2 mb-2">
-              <CrestCounter type="crests" src='hogwarts' count={students.length}/>
-              <CrestCounter type="badges" src='expelled' count={students.filter(student => student.expelled).length}/>
+              <StudentCounter src='hogwarts' count={students.length}/>
+              <StudentCounter src='expelled' type="badges" count={students.filter(student => student.expelled).length}/>
             </div>
             <div className="flex justify-center">
-              <CrestCounter type="crests" src='gryffindor' count={students.filter(student => student.house === 'Gryffindor').length}/>
-              <CrestCounter type="crests" src='slytherin' count={students.filter(student => student.house === 'Slytherin').length}/>
-              <CrestCounter type="crests" src='hufflepuff' count={students.filter(student => student.house === 'Hufflepuff').length}/>
-              <CrestCounter type="crests" src='ravenclaw' count={students.filter(student => student.house === 'Ravenclaw').length}/>
+              <StudentCounter src='gryffindor' count={students.filter(student => student.house === 'Gryffindor').length}/>
+              <StudentCounter src='slytherin' count={students.filter(student => student.house === 'Slytherin').length}/>
+              <StudentCounter src='hufflepuff' count={students.filter(student => student.house === 'Hufflepuff').length}/>
+              <StudentCounter src='ravenclaw' count={students.filter(student => student.house === 'Ravenclaw').length}/>
             </div>
           </div>
         </div>

@@ -1,4 +1,4 @@
-export default function StudentCounter({ type, src, count }) {
+export default function StudentCounter({ src, type = 'crests', count }) {
   return (
     <span className="w-8 h-8 inline-grid place-content-center">
       <img src={`./images/${type}/${src}.svg`} className="w-auto h-8 grid-center opacity-50"/>
