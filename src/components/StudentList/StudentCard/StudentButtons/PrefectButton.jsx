@@ -24,7 +24,12 @@ export default function PrefectButton({ student }) {
   }
 
   return (
-    <button onClick={togglePrefect} ref={button} className="border-2 p-2 flex justify-between">
+    <button
+      ref={button}
+      onClick={togglePrefect}
+      onAnimationEnd={() => button.current.classList.remove('shake')}
+      className="border-2 p-2 flex justify-between"
+    >
       <p>Prefect</p>
       <span>{ student.prefect ? '-' : '+' }</span>
     </button>
