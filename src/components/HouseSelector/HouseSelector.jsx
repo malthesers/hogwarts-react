@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { ThemeContext } from "../../context/ThemeContext"
 import CrestPart from "./CrestPart";
+import CrestColour from "./CrestColour";
 
 export default function HouseSelector({ showHouseSelector, toggleHouseSelector }) {
   const theme = useContext(ThemeContext)
@@ -11,10 +12,10 @@ export default function HouseSelector({ showHouseSelector, toggleHouseSelector }
       <p className={ (showHouseSelector ? 'scale-100 mb-8' : 'scale-0 mb-0') + ' text-3xl sm:text-4xl text-center duration-200'}>Select a House</p>
       <div onClick={toggleHouseSelector} className={ (showHouseSelector ? 'w-[20rem] sm:w-[30rem]' : '[&>*]:pointer-events-none w-[6rem] mb-20') + ' hogwarts-crest-container grid mx-auto cursor-pointer duration-500'}>
         <img className="hogwarts-crest-frame" src="src/assets/hogwarts-parts/hogwarts-frame.svg"/>
-        <img id="gryffindor-colour" className="hogwarts-crest-red" src="src/assets/hogwarts-parts/hogwarts-colours/hogwarts-red.svg"/>
-        <img id="slytherin-colour" className="hogwarts-crest-green" src="src/assets/hogwarts-parts/hogwarts-colours/hogwarts-green.svg"/>
-        <img id="hufflepuff-colour" className="hogwarts-crest-yellow" src="src/assets/hogwarts-parts/hogwarts-colours/hogwarts-yellow.svg"/>
-        <img id="ravenclaw-colour" className="hogwarts-crest-blue" src="src/assets/hogwarts-parts/hogwarts-colours/hogwarts-blue.svg"/>
+        <CrestColour house='gryffindor'/>
+        <CrestColour house='slytherin'/>
+        <CrestColour house='hufflepuff'/>
+        <CrestColour house='ravenclaw'/>
         <CrestPart house='gryffindor' />
         <CrestPart house='slytherin' />
         <CrestPart house='hufflepuff-body'/>
