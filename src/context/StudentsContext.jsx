@@ -10,20 +10,12 @@ export function useStudents() {
   return useContext(StudentsContext)
 }
 
-export function useDisplayedStudents() {
-  return useContext(DisplayedStudentsContext)
+export function useStudentDispatchContext() {
+  return useContext(StudentDispatchContext)
 }
 
-const initialStudents = []
-
-function studentsReducer(state, action) {
-  switch (action.type) {
-    case 'initialised': {
-      return [
-        ...action.students
-      ]
-    }
-  }
+export function useDisplayedStudents() {
+  return useContext(DisplayedStudentsContext)
 }
 
 export function StudentsProvider({ children }) {
@@ -54,4 +46,25 @@ export function StudentsProvider({ children }) {
       </StudentDispatchContext.Provider>
     </StudentsContext.Provider>
   )
+}
+
+const initialStudents = []
+
+function studentsReducer(students, action) {
+  switch (action.type) {
+    case 'initialised': {
+      return [
+        ...action.students
+      ]
+    }
+    case 'toggled_prefect': {
+      return students.map(student => {
+        if (student.id === action.student.id) {
+          return {...action.student, prefect: !action.student.prefect}
+        } else {
+          return student
+        }
+      })
+    }
+  }
 }
