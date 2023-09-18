@@ -16,7 +16,7 @@ function App() {
   return (
     <main className='bg-hogwarts-dark text-hogwarts-accent font-merinda min-h-screen pb-20'>
       <section className='max-w-6xl mx-auto grid lg:grid-cols-[13rem_auto]'>
-        <OverviewPanel theme={theme} students={students} />
+        <OverviewPanel students={students} />
         <StudentList students={students} />
       </section>
     </main>
