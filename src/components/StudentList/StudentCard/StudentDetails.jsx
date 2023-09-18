@@ -7,10 +7,10 @@ export default function StudentDetails({ student }) {
           <p>Blood status: {student.bloodStatus}</p>
         </div>
         <div className="mt-4 md:mt-0 flex gap-2 justify-between col-span-3 lg:col-span-1">
-          <img src={`./images/badges/cap-${student.house.toLowerCase()}.svg`} className="h-16 sm:h-20 duration-300" />
-          <img src="/images/badges/prefect.svg" className="h-16 sm:h-20 duration-300" />
-          <img src="/images/badges/inquisitor.svg" className="h-16 sm:h-20 duration-300" />
-          <img src="/images/badges/expelled.svg" className="h-16 sm:h-20 duration-300" />
+          <img src={`./images/badges/cap-${student.house.toLowerCase()}.svg`} className={ (student.captain ? 'opacity-100' : 'opacity-50') + " h-16 sm:h-20 duration-300" } />
+          <img src="/images/badges/prefect.svg" className={ (student.prefect ? 'opacity-100' : 'opacity-50') + " h-16 sm:h-20 duration-300" } />
+          <img src="/images/badges/inquisitor.svg" className={ (student.inquisitor ? 'opacity-100' : 'opacity-50') + " h-16 sm:h-20 duration-300" } />
+          <img src="/images/badges/expelled.svg" className={ (student.expelled ? 'opacity-100' : 'opacity-50') + " h-16 sm:h-20 duration-300" } />
         </div>
       </div>
       <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-2 my-4 duration-200">
