@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { ThemeProvider, useTheme } from './context/ThemeContext'
+import { useTheme } from './context/ThemeContext'
 import getFormattedStudents from './utils/reformatting'
 import OverviewPanel from './components/OverviewPanel/OverviewPanel'
 import StudentList from './components/StudentList/StudentList'
@@ -15,22 +15,19 @@ function App() {
     setShowHouseSelector(showHouseSelector => !showHouseSelector)
   }
 
-
   useEffect(() => {
     const formattedStudents = getFormattedStudents()
     setStudents(formattedStudents)
   }, [])
 
   return (
-    <ThemeProvider>
-      <main className={`bg-${theme}-light text-${theme}-accent ` + 'font-merinda min-h-screen pb-20'}>
-        <section className='max-w-6xl mx-auto grid lg:grid-cols-[13rem_auto]'>
-          <OverviewPanel students={students} />
-          <StudentList students={students} />
-        </section>
-        <HouseSelector toggleHouseSelector={toggleHouseSelector} showHouseSelector={showHouseSelector} />
-      </main>
-    </ThemeProvider>
+    <main className={`bg-${theme}-light text-${theme}-accent ` + 'font-merinda min-h-screen pb-20'}>
+      <section className='max-w-6xl mx-auto grid lg:grid-cols-[13rem_auto]'>
+        <OverviewPanel students={students} />
+        <StudentList students={students} />
+      </section>
+      <HouseSelector toggleHouseSelector={toggleHouseSelector} showHouseSelector={showHouseSelector} />
+    </main>
   )
 }
 

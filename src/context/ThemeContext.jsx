@@ -1,6 +1,6 @@
 import { createContext, useContext, useState } from "react";
 
-const ThemeContext = createContext("hogwarts");
+const ThemeContext = createContext();
 const ThemeUpdaterContext = createContext()
 
 export function useTheme() {
@@ -12,16 +12,17 @@ export function useThemeUpdater() {
 }
 
 export function ThemeProvider({ children }) {
-  const [theme, setTheme] = useState("hogwarts");
+  const [theme, setTheme] = useState('hogwarts');
 
   function updateTheme(house) {
     setTheme(theme => house)
   }
 
   return (
-  <ThemeContext.Provider value={theme}>
-    <ThemeUpdaterContext.Provider value={updateTheme}>
-      {children}
-    </ThemeUpdaterContext.Provider>
-  </ThemeContext.Provider>);
+    <ThemeContext.Provider value={theme}>
+      <ThemeUpdaterContext.Provider value={updateTheme}>
+        {children}
+      </ThemeUpdaterContext.Provider>
+    </ThemeContext.Provider>
+  );
 }
