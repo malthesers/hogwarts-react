@@ -1,8 +1,12 @@
+import { useThemeUpdater } from "../../context/ThemeContext"
 import { animateHouse, unanimateHouse } from "../../utils/housing"
 
 export default function CrestPart({ house, part = '' }) {
+  const updateTheme = useThemeUpdater()
+
   return (
     <img
+      onClick={() => updateTheme(house)}
       onMouseEnter={ () => animateHouse(house) }
       onMouseLeave={ () => unanimateHouse(house) }
       id={ `${house}${part}-part` }

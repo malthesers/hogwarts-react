@@ -1,9 +1,8 @@
-import { useContext } from "react";
-import { ThemeContext } from "../../context/ThemeContext"
+import { useTheme } from "../../context/ThemeContext"
 import CrestCounter from "./StudentCounter";
 
 export default function ({ students }) {
-  const theme = useContext(ThemeContext)
+  const theme = useTheme()
 
   return (
     <aside>
