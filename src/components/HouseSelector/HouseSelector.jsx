@@ -17,7 +17,7 @@ export default function HouseSelector({ showHouseSelector, toggleHouseSelector }
         <CrestColour house='ravenclaw'/>
         <CrestPart house='gryffindor' />
         <CrestPart house='slytherin' />
-        <CrestPart house='hufflepuff-body'/>
+        <CrestPart house='hufflepuff' part='-body' />
         <CrestPart house='hufflepuff' />
         <CrestPart house='ravenclaw' />
         <CrestPart house='hogwarts' />
