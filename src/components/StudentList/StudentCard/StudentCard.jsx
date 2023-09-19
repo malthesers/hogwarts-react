@@ -18,9 +18,7 @@ export default function StudentCard({ student }) {
           <p className="px-2">{ student.house }</p>
         </div>
       </div>
-      <CSSTransition in={showDetails} timeout={400} classNames='details' unmountOnExit>
-        <StudentDetails student={student} />
-      </CSSTransition>
+      <StudentDetails student={student} showDetails={showDetails} />
     </article>
   )
 }

@@ -1,7 +1,7 @@
 import { StudentButtons } from './StudentButtons/StudentButtons';
-export default function StudentDetails({ student }) {
+export default function StudentDetails({ student, showDetails }) {
   return (
-    <div className="relative max-h-96 text-xl overflow-hidden">
+    <div className={(showDetails ? 'max-h-96' : 'max-h-0') + ' relative text-xl overflow-hidden duration-[400ms] ease-linear'}>
       <div className="mt-2 md:flex md:justify-between">
         <div className="text-base md:text-xl flex flex-col justify-center gap-2 col-span-3 lg:col-span-2">
           <p>Full name: {student.lastName ? `${student.lastName}, ` : ''}{student.firstName} {student.middleName} {student.nickName}</p>
