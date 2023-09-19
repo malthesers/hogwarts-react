@@ -18,11 +18,11 @@ export default function StudentFilters() {
   return (
     <div className="grid gap-2 sm:gap-4 grid-cols-[auto_4rem] sm:grid-cols-[7rem_1fr] mb-4">
       <div className="cursor-pointer">
-        <p className={`bg-${theme}-dark border-${theme}-accent` + ' border-2 p-2 flex justify-between items-center'}>
+        <p onClick={() => setShowFilteringMethods(!showFilteringMethods)} className={`bg-${theme}-dark border-${theme}-accent` + ' border-2 p-2 flex justify-between items-center'}>
           <span>Filter by...</span>
           <IconChevron className={`fill-${theme}-accent` + ' h-4 duration-300'}/>
         </p>
-        <div className="max-h-80 overflow-hidden">
+        <div className={(showFilteringMethods ? 'max-h-80' : 'max-h-0') + " overflow-hidden duration-[250ms]"}>
           { Object.keys(filteringMethods).map((key) => 
             <p key={key} className={`bg-${theme}-dark border-${theme}-accent` + ' border-2 border-t-0 p-2'}>
               <span>{ filteringMethods[key] }</span>
