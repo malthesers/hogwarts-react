@@ -16,6 +16,7 @@ export function ThemeProvider({ children }) {
 
   function updateTheme(house) {
     setTheme(theme => house)
+    document.querySelector('body').setAttribute('theme', house)
   }
 
   return (
