@@ -1,7 +1,7 @@
+import { useState } from "react"
 import { useTheme } from "../../../context/ThemeContext"
 import IconChevron from "../../icons/IconChevron"
 import IconBadge from "../../icons/IconBadge"
-import { useState } from "react"
 
 export default function StudentFilters() {
   const theme = useTheme()
