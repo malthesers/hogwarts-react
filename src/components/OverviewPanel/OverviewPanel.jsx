@@ -17,7 +17,7 @@ export default function () {
           <div>
             <p className="text-lg lg:text-xl mb-2">Students</p>
             <div className="flex justify-center gap-2 mb-2">
-              <StudentCounter src='hogwarts' count={students.length}/>
+              <StudentCounter src='hogwarts' count={students.filter(student => !student.expelled).length}/>
               <StudentCounter src='expelled' type="badges" count={students.filter(student => student.expelled).length}/>
             </div>
             <div className="flex justify-center">
