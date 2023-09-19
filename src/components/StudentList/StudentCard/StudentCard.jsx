@@ -1,4 +1,3 @@
-import { CSSTransition } from "react-transition-group"
 import StudentDetails from "./StudentDetails"
 import { useRef, useState } from "react"
 
