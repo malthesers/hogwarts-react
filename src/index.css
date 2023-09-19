@@ -77,6 +77,21 @@
   }
 }
 
+.details-enter {
+  max-height: 0;
+}
+.details-enter-active {
+  max-height: 25rem;
+  transition: max-height 400ms ease-in-out;
+}
+.details-exit {
+  max-height: 25rem;
+}
+.details-exit-active {
+  max-height: 0;
+  transition: max-height 400ms ease-in-out;
+}
+
 /* Scrollbar house themes */
 
 ::-webkit-scrollbar {

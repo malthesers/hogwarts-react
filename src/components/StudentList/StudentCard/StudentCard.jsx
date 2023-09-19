@@ -1,5 +1,6 @@
+import { CSSTransition } from "react-transition-group"
 import StudentDetails from "./StudentDetails"
-import { useState } from "react"
+import { useRef, useState } from "react"
 
 export default function StudentCard({ student }) {
   const [showDetails, setShowDetails] = useState(false)
@@ -17,7 +18,9 @@ export default function StudentCard({ student }) {
           <p className="px-2">{ student.house }</p>
         </div>
       </div>
-      { showDetails ? <StudentDetails student={student} /> : null }
+      <CSSTransition in={showDetails} timeout={400} classNames='details' unmountOnExit>
+        <StudentDetails student={student} />
+      </CSSTransition>
     </article>
   )
 }
