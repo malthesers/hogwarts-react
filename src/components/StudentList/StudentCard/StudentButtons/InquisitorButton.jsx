@@ -31,6 +31,7 @@ export default function InquisitorButton({ student }) {
       onClick={toggleInquisitor}
       onAnimationEnd={() => button.current.classList.remove('shake')}
       className={`bg-${theme}-accent text-${theme}-dark border-${theme}-dark` + " border-2 p-2 flex justify-between"}
+      disabled={student.expelled}
     >
       <p>Inquisitor</p>
       <span>{ student.inquisitor ? '-' : '+' }</span>

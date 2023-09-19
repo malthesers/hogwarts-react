@@ -31,6 +31,7 @@ export default function PrefectButton({ student }) {
       onClick={togglePrefect}
       onAnimationEnd={() => button.current.classList.remove('shake')}
       className={`bg-${theme}-accent text-${theme}-dark border-${theme}-dark` + " border-2 p-2 flex justify-between"}
+      disabled={student.expelled}
     >
       <p>Prefect</p>
       <span>{ student.prefect ? '-' : '+' }</span>
