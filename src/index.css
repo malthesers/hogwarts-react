@@ -77,6 +77,52 @@
   }
 }
 
+/* Scrollbar house themes */
+
+::-webkit-scrollbar {
+  width: 1rem;
+}
+
+[theme="hogwarts"]::-webkit-scrollbar-track {
+  background-color: #392a48;
+}
+
+[theme="hogwarts"]::-webkit-scrollbar-thumb {
+  background-color: #2f223a;
+}
+
+[theme="gryffindor"]::-webkit-scrollbar-track {
+  background-color: #a62025;
+}
+
+[theme="gryffindor"]::-webkit-scrollbar-thumb {
+  background-color: #5d070a;
+}
+
+[theme="slytherin"]::-webkit-scrollbar-track {
+  background-color: #214926;
+}
+
+[theme="slytherin"]::-webkit-scrollbar-thumb {
+  background-color: #112d14;
+}
+
+[theme="hufflepuff"]::-webkit-scrollbar-track {
+  background-color: #d9ab0d;
+}
+
+[theme="hufflepuff"]::-webkit-scrollbar-thumb {
+  background-color: #a17f0b;
+}
+
+[theme="ravenclaw"]::-webkit-scrollbar-track {
+  background-color: #02223b;
+}
+
+[theme="ravenclaw"]::-webkit-scrollbar-thumb {
+  background-color: #01121e;
+}
+
 /* Hogwarts crest composition */
 
 .hogwarts-crest-container {
