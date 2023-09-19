@@ -33,7 +33,10 @@ export function StudentsProvider({ children }) {
 
   // Calculate displayed students
   useEffect(() => {
-    const filteredStudents = [ ...students ].filter(student => student.house.toLowerCase() === theme || 'hogwarts' === theme)
+    let filteredStudents = [ ...students ].filter(student => student.house.toLowerCase() === theme || 'hogwarts' === theme)
+
+    filteredStudents = filteredStudents.filter(student => !student.expelled)
+
     setDisplayedStudents(filteredStudents)
   }, [students, theme])
 
