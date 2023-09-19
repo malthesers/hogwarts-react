@@ -1,9 +1,11 @@
 import { useRef } from "react"
 import { useStudentDispatchContext } from "../../../../context/StudentsContext"
+import { useTheme } from "../../../../context/ThemeContext"
 
 export default function InquisitorButton({ student }) {
-  const button = useRef(null)
   const dispatch = useStudentDispatchContext()
+  const button = useRef(null)
+  const theme = useTheme()
 
   let isHacked = false //remove later
 
@@ -28,7 +30,7 @@ export default function InquisitorButton({ student }) {
       ref={button}
       onClick={toggleInquisitor}
       onAnimationEnd={() => button.current.classList.remove('shake')}
-      className="border-2 p-2 flex justify-between"
+      className={`bg-${theme}-accent text-${theme}-dark border-${theme}-dark` + " border-2 p-2 flex justify-between"}
     >
       <p>Inquisitor</p>
       <span>{ student.inquisitor ? '-' : '+' }</span>

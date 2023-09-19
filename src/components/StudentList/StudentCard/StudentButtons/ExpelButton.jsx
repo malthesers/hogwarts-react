@@ -1,8 +1,10 @@
 import { useRef } from "react"
+import { useTheme } from "../../../../context/ThemeContext"
 
 export default function ExpelButton({ student }) {
   const button = useRef(null)
   const howler = useRef(null)
+  const theme = useTheme()
   
   let expulsionAttempts = 0
 
@@ -29,7 +31,11 @@ export default function ExpelButton({ student }) {
   }
 
   return (
-    <button onClick={expelStudent} ref={button} className="border-2 p-2 flex justify-between relative sm:col-span-2 md:col-span-1">
+    <button
+      onClick={expelStudent}
+      ref={button}
+      className={`bg-${theme}-accent text-${theme}-dark border-${theme}-dark` + ' border-2 p-2 flex justify-between relative sm:col-span-2 md:col-span-1'}
+    >
       <p>{ student.expelled ? 'Expelled' : 'Expel Student' }</p>
       <img ref={howler} src="src/assets/icons/howler.svg" alt="howler expulsion icon" className="absolute w-20 rotate-[10deg] top-[-7%] right-[3%]" />
     </button>

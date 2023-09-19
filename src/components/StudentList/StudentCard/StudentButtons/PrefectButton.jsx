@@ -1,10 +1,12 @@
 import { useRef } from "react"
 import { useStudentDispatchContext, useStudents } from "../../../../context/StudentsContext"
+import { useTheme } from "../../../../context/ThemeContext"
 
 export default function PrefectButton({ student }) {
-  const button = useRef(null)
-  const students = useStudents()
   const dispatch = useStudentDispatchContext()
+  const students = useStudents()
+  const button = useRef(null)
+  const theme = useTheme()
 
   const housePrefects = students.filter(otherStudent => otherStudent.prefect && otherStudent.house === student.house)
 
@@ -28,7 +30,7 @@ export default function PrefectButton({ student }) {
       ref={button}
       onClick={togglePrefect}
       onAnimationEnd={() => button.current.classList.remove('shake')}
-      className="border-2 p-2 flex justify-between"
+      className={`bg-${theme}-accent text-${theme}-dark border-${theme}-dark` + " border-2 p-2 flex justify-between"}
     >
       <p>Prefect</p>
       <span>{ student.prefect ? '-' : '+' }</span>
