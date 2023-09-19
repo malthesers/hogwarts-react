@@ -1,4 +1,5 @@
 import { useTheme } from "../../../context/ThemeContext"
+import IconWand from "../../icons/IconWand"
 
 export default function StudentSearching() {
   const theme = useTheme()
@@ -9,7 +10,7 @@ export default function StudentSearching() {
         placeholder="Search..."
         className={`bg-${theme}-dark border-${theme}-accent placeholder-${theme}-accent` + ' w-full border-2 p-2 outline-none placeholder:opacity-60'}
       />
-      {/* <IconWand :className="`fill-${theme}-accent`" class="h-12 place-self-center sm:row-start-1 sm:col-start-1"/> */}
+      <IconWand className={ `fill-${theme}-accent` + ' h-12 place-self-center sm:row-start-1 sm:col-start-1'} />
     </div>
   )
 }
