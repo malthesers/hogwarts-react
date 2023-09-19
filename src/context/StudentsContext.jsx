@@ -75,5 +75,14 @@ function studentsReducer(students, action) {
         }
       })
     }
+    case 'expelled_student': {
+      return students.map(student => {
+        if (student.id === action.student.id) {
+          return {...action.student, expelled: true}
+        } else {
+          return student
+        }
+      })
+    }
   }
 }
