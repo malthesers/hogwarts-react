@@ -3,7 +3,7 @@ import { useStudents } from "../../../../context/StudentsContext"
 import { useTheme } from "../../../../context/ThemeContext"
 
 export default function InquisitorButton({ student }) {
-  const { students, dispatch } = useStudents()
+  const { dispatch } = useStudents()
   const button = useRef(null)
   const theme = useTheme()
 

@@ -3,7 +3,7 @@ import { useTheme } from "../../../../context/ThemeContext"
 import { useStudents } from "../../../../context/StudentsContext"
 
 export default function ExpelButton({ student }) {
-  const { students, dispatch } = useStudents()
+  const { dispatch } = useStudents()
   const button = useRef(null)
   const howler = useRef(null)
   const theme = useTheme()

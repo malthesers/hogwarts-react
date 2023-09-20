@@ -3,7 +3,7 @@ import StudentCard from "./StudentCard/StudentCard"
 import StudentOptions from "./StudentOptions/StudentOptions"
 
 export default function StudentList () {
-  const {students, dispatch, displayedStudents} = useStudents()
+  const { displayedStudents } = useStudents()
 
   return (
     <section className="p-4">

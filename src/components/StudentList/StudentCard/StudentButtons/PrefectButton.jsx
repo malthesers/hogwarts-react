@@ -10,7 +10,6 @@ export default function PrefectButton({ student }) {
   const housePrefects = students.filter(otherStudent => otherStudent.prefect && otherStudent.house === student.house)
 
   function togglePrefect() {
-    console.log(housePrefects)
     if (student.prefect) {
       dispatch({ type: 'toggled_prefect', student: student })
     } else if (housePrefects.length === 2) {
