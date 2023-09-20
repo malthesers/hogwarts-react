@@ -1,8 +1,9 @@
-import { useStudents } from "../../context/StudentsContext";
+import { useDisplayedStudents, useStudents } from "../../context/StudentsContext";
 import { useTheme } from "../../context/ThemeContext"
 import StudentCounter from "./StudentCounter";
 
 export default function () {
+  const displayedStudents = useDisplayedStudents()
   const {students, dispatch} = useStudents()
   const theme = useTheme()
 
@@ -31,7 +32,7 @@ export default function () {
         <img src={`./images/crests/${theme}.svg`} alt="Hogwarts Crest" className="w-full max-w-[12rem] mx-auto col-span-2 xs:col-span-1"/>      
         <div className="text-xl sm:text-2xl mt-4 lg:mt-0 col-span-2 lg:col-span-1 lg:row-start-2 lg:row-end-2">
           <p className="inline-block">Currently Displayed: </p>
-          <span className="inline-block w-8 ml-2 text-left">{ students.length }</span>
+          <span className="inline-block w-8 ml-2 text-left">{ displayedStudents.length }</span>
         </div>
       </div>
     </aside>
