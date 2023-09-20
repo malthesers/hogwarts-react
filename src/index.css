@@ -147,7 +147,6 @@
 
 .hogwarts-crest-container > img {
   position: absolute;
-  cursor: pointer;
   transition-duration: 300ms;
 }
 
