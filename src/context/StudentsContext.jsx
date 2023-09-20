@@ -40,12 +40,17 @@ export function StudentsProvider({ children }) {
 
   // Calculate displayed students
   useEffect(() => {
-    let filteredStudents = [ ...students ].filter(student => student.house.toLowerCase() === theme || 'hogwarts' === theme)
+    // Filter by house
+    let displayedStudents = [ ...students ].filter(student => student.house.toLowerCase() === theme || 'hogwarts' === theme)
 
-    filteredStudents = filteredStudents.filter(student => !student.expelled)
+    // Include search query in name
+    displayedStudents = displayedStudents.filter(student => student.fullName.toLowerCase().includes(options.search.toLowerCase()) || options.search === '')
 
-    setDisplayedStudents(filteredStudents)
-  }, [students, theme])
+    // Show current students
+    displayedStudents = displayedStudents.filter(student => !student.expelled)
+
+    setDisplayedStudents(displayedStudents)
+  }, [students, options, theme])
 
   return (
     <StudentsContext.Provider value={{students, dispatch}}>
