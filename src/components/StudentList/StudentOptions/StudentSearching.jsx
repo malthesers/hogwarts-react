@@ -4,7 +4,7 @@ import IconWand from "../../icons/IconWand"
 
 export default function StudentSearching() {
   const [options, setOptions] = useOptions()
-  const theme = useTheme()
+  const { theme } = useTheme()
 
   return (
     <div className="grid gap-2 sm:gap-4 grid-cols-[auto_4rem] sm:grid-cols-[7rem_1fr] mb-4">

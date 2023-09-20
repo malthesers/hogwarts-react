@@ -5,7 +5,7 @@ import { useTheme } from "../../../../context/ThemeContext"
 export default function PrefectButton({ student }) {
   const {students, dispatch} = useStudents()
   const button = useRef(null)
-  const theme = useTheme()
+  const { theme } = useTheme()
 
   const housePrefects = students.filter(otherStudent => otherStudent.prefect && otherStudent.house === student.house)
 

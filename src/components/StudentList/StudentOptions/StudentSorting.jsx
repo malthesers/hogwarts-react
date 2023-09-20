@@ -6,7 +6,7 @@ import IconHat from "../../icons/IconHat"
 
 export default function StudentFilters() {
   const [options, setOptions] = useOptions()
-  const theme = useTheme()
+  const { theme } = useTheme()
 
   const [showSortingMethods, setShowSortingMethods] = useState(false)
   const sortingMethods = {

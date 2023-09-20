@@ -23,7 +23,7 @@ export function StudentsProvider({ children }) {
     sortingOrder: 1
   })
 
-  const theme = useTheme()
+  const { theme } = useTheme()
 
   // Load students on mount
   useEffect(() => {

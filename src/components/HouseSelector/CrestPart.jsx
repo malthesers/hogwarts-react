@@ -1,8 +1,8 @@
-import { useThemeUpdater } from "../../context/ThemeContext"
+import { useTheme } from "../../context/ThemeContext"
 import { animateHouse, unanimateHouse } from "../../utils/housing"
 
 export default function CrestPart({ house, part = '' }) {
-  const updateTheme = useThemeUpdater()
+  const { updateTheme } = useTheme()
 
   return (
     <img

@@ -1,14 +1,9 @@
 import { createContext, useContext, useState } from "react";
 
 const ThemeContext = createContext()
-const ThemeUpdaterContext = createContext()
 
 export function useTheme() {
   return useContext(ThemeContext)
-}
-
-export function useThemeUpdater() {
-  return useContext(ThemeUpdaterContext)
 }
 
 export function ThemeProvider({ children }) {
@@ -20,10 +15,8 @@ export function ThemeProvider({ children }) {
   }
 
   return (
-    <ThemeContext.Provider value={theme}>
-      <ThemeUpdaterContext.Provider value={updateTheme}>
-        {children}
-      </ThemeUpdaterContext.Provider>
+    <ThemeContext.Provider value={{theme, updateTheme}}>
+      {children}
     </ThemeContext.Provider>
   );
 }

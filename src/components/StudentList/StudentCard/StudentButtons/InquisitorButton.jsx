@@ -5,7 +5,7 @@ import { useTheme } from "../../../../context/ThemeContext"
 export default function InquisitorButton({ student }) {
   const { dispatch } = useStudents()
   const button = useRef(null)
-  const theme = useTheme()
+  const { theme } = useTheme()
 
   let isHacked = false //remove later
 

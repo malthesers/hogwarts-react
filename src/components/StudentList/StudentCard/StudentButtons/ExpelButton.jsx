@@ -6,7 +6,7 @@ export default function ExpelButton({ student }) {
   const { dispatch } = useStudents()
   const button = useRef(null)
   const howler = useRef(null)
-  const theme = useTheme()
+  const { theme } = useTheme()
   
   let expulsionAttempts = 0
 

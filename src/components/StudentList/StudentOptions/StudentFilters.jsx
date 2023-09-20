@@ -6,7 +6,7 @@ import IconBadge from "../../icons/IconBadge"
 
 export default function StudentFilters() {
   const [options, setOptions] = useOptions()
-  const theme = useTheme()
+  const { theme } = useTheme()
 
   const [showFilteringMethods, setShowFilteringMethods] = useState(false)
   const filteringMethods = {

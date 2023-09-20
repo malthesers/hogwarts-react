@@ -4,7 +4,7 @@ import StudentCounter from "./StudentCounter";
 
 export default function () {
   const {students, displayedStudents} = useStudents()
-  const theme = useTheme()
+  const { theme } = useTheme()
 
   return (
     <aside>

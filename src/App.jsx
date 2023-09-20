@@ -7,7 +7,7 @@ import HouseSelector from './components/HouseSelector/HouseSelector'
 function App() {
   const [showHouseSelector, setShowHouseSelector] = useState(false)
   
-  const theme = useTheme()
+  const { theme } = useTheme()
 
   function toggleHouseSelector() {
     setShowHouseSelector(showHouseSelector => !showHouseSelector)
