@@ -38,7 +38,7 @@ export default function StudentFilters() {
                 className={`bg-${theme}-dark border-${theme}-accent` + " border-2 border-t-0 p-2 flex justify-between items-center"}
               >
                 <span>{ sortingMethods[method] }</span>
-                <IconChevron className={(options.sortingOrder === 1 ? 'scale-y-100' : '-scale-y-100') + (options.sorting === method ? '' : 'scale-y-0 opacity-0 ') + ` fill-${theme}-accent` + " h-4 duration-300"} />
+                <IconChevron className={(options.sortingOrder === 1 ? 'scale-y-100' : '-scale-y-100') + (options.sorting === method ? '' : ' opacity-0') + ` fill-${theme}-accent` + " h-4 duration-300"} />
               </p>
             )}
           </div>
@@ -50,7 +50,7 @@ export default function StudentFilters() {
                 className={`fill-${theme}-accent` + " p-2 flex justify-between items-center"}
               >
                 <span>{ sortingMethods[method] }</span>
-                <IconChevron className={`fill-${theme}-accent` + " h-3 md:h-4 duration-300"} />
+                <IconChevron className={(options.sortingOrder === 1 ? 'scale-y-100' : '-scale-y-100') + (options.sorting === method ? '' : ' opacity-0') + ` fill-${theme}-accent` + " h-3 md:h-4 duration-300"} />
               </p>
             )}
         </div>
