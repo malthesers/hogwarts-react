@@ -18,7 +18,8 @@ export default function StudentFilters() {
   function updateSorting(sorting) {
     setOptions({
       ...options,
-      sorting: sorting
+      sorting: sorting,
+      sortingOrder: (options.sorting === sorting ? options.sortingOrder *= -1 : 1)
     })
   }
 
