@@ -43,21 +43,14 @@ export function StudentsProvider({ children }) {
     // Filter by house
     let displayedStudents = [ ...students ].filter(student => student.house.toLowerCase() === theme || 'hogwarts' === theme)
 
-    // Include search query in name
+    // Include searching
     displayedStudents = displayedStudents.filter(student => student.fullName.toLowerCase().includes(options.search.toLowerCase()) || options.search === '')
 
-    // Show current students
-    // displayedStudents = displayedStudents.filter(student => !student.expelled)
-
-    // Show all expelled students
-    if (options.filter === 'expelled') displayedStudents = displayedStudents.filter(student => student.expelled)
-
-    // Show all current students
-    if (options.filter === 'current') displayedStudents = displayedStudents.filter(student => !student.expelled)
-
-    // Apply any other filter except expelled or current
-    if (options.filter !== 'expelled' && options.filter !== 'current') {
-      displayedStudents = displayedStudents.filter(student => student[options.filter] || options.filter === 'all')
+    // Include filter
+    switch (options.filter) {
+      case 'expelled': displayedStudents = displayedStudents.filter(student => student.expelled)
+      case 'current': displayedStudents = displayedStudents.filter(student => !student.expelled)
+      default: displayedStudents = displayedStudents.filter(student => student[options.filter] || options.filter === 'all')
     }
 
     setDisplayedStudents(displayedStudents)
