@@ -38,7 +38,8 @@ export default function StudentFilters() {
             <p
               onClick={() => updateFilter(key)}
               key={key}
-              className={`bg-${theme}-dark border-${theme}-accent` + ' border-2 border-t-0 p-2'}>
+              className={`bg-${theme}-dark border-${theme}-accent` + ' border-2 border-t-0 p-2'}
+            >
               <span>{ filteringMethods[key] }</span>
             </p>
           )}

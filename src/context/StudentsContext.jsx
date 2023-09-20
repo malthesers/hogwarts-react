@@ -53,6 +53,11 @@ export function StudentsProvider({ children }) {
       default: displayedStudents = displayedStudents.filter(student => student[options.filter] || options.filter === 'all')
     }
 
+    // Include sorting
+    displayedStudents.sort((a, b) => {
+      return a[options.sorting] > b[options.sorting] ? (1 * options.sortingOrder) : (-1 * options.sortingOrder)
+    })
+
     setDisplayedStudents(displayedStudents)
   }, [students, options, theme])
 

@@ -1,9 +1,11 @@
 import { useState } from "react"
+import { useOptions } from "../../../context/StudentsContext"
 import { useTheme } from "../../../context/ThemeContext"
 import IconChevron from "../../icons/IconChevron"
 import IconHat from "../../icons/IconHat"
 
 export default function StudentFilters() {
+  const [options, setOptions] = useOptions()
   const theme = useTheme()
 
   const [showSortingMethods, setShowSortingMethods] = useState(false)
@@ -11,6 +13,13 @@ export default function StudentFilters() {
     firstName: 'First name',
     lastName: 'Last name',
     house: 'House'
+  }
+
+  function updateSorting(sorting) {
+    setOptions({
+      ...options,
+      sorting: sorting
+    })
   }
 
   return (
@@ -22,7 +31,11 @@ export default function StudentFilters() {
         </p>
           <div className={(showSortingMethods ? 'max-h-40' : 'max-h-0') + " sm:hidden overflow-hidden duration-[250ms]"}>
             { Object.keys(sortingMethods).map((key) =>
-              <p key={key} className={`bg-${theme}-dark border-${theme}-accent` + " border-2 border-t-0 p-2 flex justify-between items-center"}>
+              <p
+                onClick={() => updateSorting(key)}
+                key={key}
+                className={`bg-${theme}-dark border-${theme}-accent` + " border-2 border-t-0 p-2 flex justify-between items-center"}
+              >
                 <span>{ sortingMethods[key] }</span>
                 <IconChevron className={`fill-${theme}-accent` + " h-4 duration-300"} />
               </p>
@@ -30,7 +43,11 @@ export default function StudentFilters() {
           </div>
         <div className="hidden sm:grid grid-cols-3">
             { Object.keys(sortingMethods).map((key) =>
-              <p key={key} className={`fill-${theme}-accent` + " p-2 flex justify-between items-center"}>
+              <p
+                onClick={() => updateSorting(key)}
+                key={key}
+                className={`fill-${theme}-accent` + " p-2 flex justify-between items-center"}
+              >
                 <span>{ sortingMethods[key] }</span>
                 <IconChevron className={`fill-${theme}-accent` + " h-3 md:h-4 duration-300"} />
               </p>
