@@ -47,12 +47,10 @@ export function StudentsProvider({ children }) {
     displayedStudents = displayedStudents.filter(student => student.fullName.toLowerCase().includes(options.search.toLowerCase()) || options.search === '')
 
     // Include filter
-    switch (options.filter) {
-      case 'current': {
-        displayedStudents = displayedStudents.filter(student => !student.expelled)
-        break
-      }
-      default: displayedStudents = displayedStudents.filter(student => student[options.filter] || options.filter === 'all')
+    if (options.filter === 'current') {
+      displayedStudents = displayedStudents.filter(student => !student.expelled)
+    } else {
+      displayedStudents = displayedStudents.filter(student => student[options.filter] || options.filter === 'all')
     }
 
     // Include sorting
