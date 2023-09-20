@@ -31,25 +31,25 @@ export default function StudentFilters() {
           <IconChevron className={`fill-${theme}-accent` + " h-4 duration-300"} />
         </p>
           <div className={(showSortingMethods ? 'max-h-40' : 'max-h-0') + " sm:hidden overflow-hidden duration-[250ms]"}>
-            { Object.keys(sortingMethods).map((key) =>
+            { Object.keys(sortingMethods).map((method) =>
               <p
-                onClick={() => updateSorting(key)}
-                key={key}
+                key={method}
+                onClick={() => updateSorting(method)}
                 className={`bg-${theme}-dark border-${theme}-accent` + " border-2 border-t-0 p-2 flex justify-between items-center"}
               >
-                <span>{ sortingMethods[key] }</span>
-                <IconChevron className={`fill-${theme}-accent` + " h-4 duration-300"} />
+                <span>{ sortingMethods[method] }</span>
+                <IconChevron className={(options.sortingOrder === 1 ? 'scale-y-100' : '-scale-y-100') + (options.sorting === method ? '' : 'scale-y-0 opacity-0 ') + ` fill-${theme}-accent` + " h-4 duration-300"} />
               </p>
             )}
           </div>
         <div className="hidden sm:grid grid-cols-3">
-            { Object.keys(sortingMethods).map((key) =>
+            { Object.keys(sortingMethods).map((method) =>
               <p
-                onClick={() => updateSorting(key)}
-                key={key}
+                key={method}
+                onClick={() => updateSorting(method)}
                 className={`fill-${theme}-accent` + " p-2 flex justify-between items-center"}
               >
-                <span>{ sortingMethods[key] }</span>
+                <span>{ sortingMethods[method] }</span>
                 <IconChevron className={`fill-${theme}-accent` + " h-3 md:h-4 duration-300"} />
               </p>
             )}

@@ -36,8 +36,8 @@ export default function StudentFilters() {
         <div className={(showFilteringMethods ? 'max-h-80' : 'max-h-0') + " overflow-hidden duration-[250ms]"}>
           { Object.keys(filteringMethods).map((key) => 
             <p
-              onClick={() => updateFilter(key)}
               key={key}
+              onClick={() => updateFilter(key)}
               className={`bg-${theme}-dark border-${theme}-accent` + ' border-2 border-t-0 p-2'}
             >
               <span>{ filteringMethods[key] }</span>
