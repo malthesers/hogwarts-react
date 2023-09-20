@@ -3,16 +3,11 @@ import { useTheme } from "./ThemeContext"
 import getFormattedStudents from "../utils/reformatting"
 
 const StudentsContext = createContext()
-// const DisplayedStudentsContext = createContext()
 const OptionsContext = createContext()
 
 export function useStudents() {
   return useContext(StudentsContext)
 }
-
-// export function useDisplayedStudents() {
-//   return useContext(DisplayedStudentsContext)
-// }
 
 export function useOptions() {
   return useContext(OptionsContext)
@@ -63,11 +58,9 @@ export function StudentsProvider({ children }) {
 
   return (
     <StudentsContext.Provider value={{students, dispatch, displayedStudents}}>
-      {/* <DisplayedStudentsContext.Provider value={displayedStudents}> */}
-        <OptionsContext.Provider value={[options, setOptions]}>
-          {children}
-        </OptionsContext.Provider>
-      {/* </DisplayedStudentsContext.Provider> */}
+      <OptionsContext.Provider value={[options, setOptions]}>
+        {children}
+      </OptionsContext.Provider>
     </StudentsContext.Provider>
   )
 }
