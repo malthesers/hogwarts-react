@@ -1,10 +1,9 @@
-import { useDisplayedStudents, useStudents } from "../../context/StudentsContext";
+import { useStudents } from "../../context/StudentsContext";
 import { useTheme } from "../../context/ThemeContext"
 import StudentCounter from "./StudentCounter";
 
 export default function () {
-  const displayedStudents = useDisplayedStudents()
-  const {students, dispatch} = useStudents()
+  const {students, dispatch, displayedStudents} = useStudents()
   const theme = useTheme()
 
   return (

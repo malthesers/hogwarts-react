@@ -3,16 +3,16 @@ import { useTheme } from "./ThemeContext"
 import getFormattedStudents from "../utils/reformatting"
 
 const StudentsContext = createContext()
-const DisplayedStudentsContext = createContext()
+// const DisplayedStudentsContext = createContext()
 const OptionsContext = createContext()
 
 export function useStudents() {
   return useContext(StudentsContext)
 }
 
-export function useDisplayedStudents() {
-  return useContext(DisplayedStudentsContext)
-}
+// export function useDisplayedStudents() {
+//   return useContext(DisplayedStudentsContext)
+// }
 
 export function useOptions() {
   return useContext(OptionsContext)
@@ -41,33 +41,33 @@ export function StudentsProvider({ children }) {
   // Calculate displayed students
   useEffect(() => {
     // Filter by house
-    let displayedStudents = [ ...students ].filter(student => student.house.toLowerCase() === theme || 'hogwarts' === theme)
+    let filteredStudents = [ ...students ].filter(student => student.house.toLowerCase() === theme || 'hogwarts' === theme)
 
     // Include searching
-    displayedStudents = displayedStudents.filter(student => student.fullName.toLowerCase().includes(options.search.toLowerCase()) || options.search === '')
+    filteredStudents = filteredStudents.filter(student => student.fullName.toLowerCase().includes(options.search.toLowerCase()) || options.search === '')
 
     // Include filter
     if (options.filter === 'current') {
-      displayedStudents = displayedStudents.filter(student => !student.expelled)
+      filteredStudents = filteredStudents.filter(student => !student.expelled)
     } else {
-      displayedStudents = displayedStudents.filter(student => student[options.filter] || options.filter === 'all')
+      filteredStudents = filteredStudents.filter(student => student[options.filter] || options.filter === 'all')
     }
 
     // Include sorting
-    displayedStudents.sort((a, b) => {
+    filteredStudents.sort((a, b) => {
       return a[options.sorting] > b[options.sorting] ? (1 * options.sortingOrder) : (-1 * options.sortingOrder)
     })
 
-    setDisplayedStudents(displayedStudents)
+    setDisplayedStudents(filteredStudents)
   }, [students, options, theme])
 
   return (
-    <StudentsContext.Provider value={{students, dispatch}}>
-      <DisplayedStudentsContext.Provider value={displayedStudents}>
+    <StudentsContext.Provider value={{students, dispatch, displayedStudents}}>
+      {/* <DisplayedStudentsContext.Provider value={displayedStudents}> */}
         <OptionsContext.Provider value={[options, setOptions]}>
           {children}
         </OptionsContext.Provider>
-      </DisplayedStudentsContext.Provider>
+      {/* </DisplayedStudentsContext.Provider> */}
     </StudentsContext.Provider>
   )
 }
