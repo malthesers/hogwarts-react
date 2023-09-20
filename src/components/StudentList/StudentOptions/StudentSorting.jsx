@@ -28,7 +28,7 @@ export default function StudentFilters() {
       <div className="cursor-pointer">
         <p onClick={() => setShowSortingMethods(!showSortingMethods)} className={`bg-${theme}-dark border-${theme}-accent` + " sm:hidden border-2 p-2 flex justify-between items-center"}>
           <span>Sort by...</span>
-          <IconChevron className={`fill-${theme}-accent` + " h-4 duration-300"} />
+          <IconChevron className={(showSortingMethods ? 'rotate-180' : 'rotate-0') + ` fill-${theme}-accent` + " h-4 duration-300"} />
         </p>
           <div className={(showSortingMethods ? 'max-h-40' : 'max-h-0') + " sm:hidden overflow-hidden duration-[250ms]"}>
             { Object.keys(sortingMethods).map((method) =>

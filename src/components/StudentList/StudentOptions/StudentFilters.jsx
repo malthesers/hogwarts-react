@@ -31,7 +31,7 @@ export default function StudentFilters() {
       <div className="cursor-pointer">
         <p onClick={() => setShowFilteringMethods(!showFilteringMethods)} className={`bg-${theme}-dark border-${theme}-accent` + ' border-2 p-2 flex justify-between items-center'}>
           <span>Filter by...</span>
-          <IconChevron className={`fill-${theme}-accent` + ' h-4 duration-300'}/>
+          <IconChevron className={(showFilteringMethods ? 'rotate-180' : 'rotate-0') + ` fill-${theme}-accent` + ' h-4 duration-300'}/>
         </p>
         <div className={(showFilteringMethods ? 'max-h-80' : 'max-h-0') + " overflow-hidden duration-[250ms]"}>
           { Object.keys(filteringMethods).map((key) => 
