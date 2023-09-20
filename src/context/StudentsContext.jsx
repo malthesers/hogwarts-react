@@ -48,10 +48,6 @@ export function StudentsProvider({ children }) {
 
     // Include filter
     switch (options.filter) {
-      case 'expelled': {
-        displayedStudents = displayedStudents.filter(student => student.expelled)
-        break
-      }
       case 'current': {
         displayedStudents = displayedStudents.filter(student => !student.expelled)
         break
