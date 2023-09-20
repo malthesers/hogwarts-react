@@ -3,27 +3,34 @@ import { useTheme } from "./ThemeContext"
 import getFormattedStudents from "../utils/reformatting"
 
 const StudentsContext = createContext()
-const StudentDispatchContext = createContext()
 const DisplayedStudentsContext = createContext()
+const StudentsOptionsContext = createContext()
 
 export function useStudents() {
   return useContext(StudentsContext)
-}
-
-export function useStudentDispatchContext() {
-  return useContext(StudentDispatchContext)
 }
 
 export function useDisplayedStudents() {
   return useContext(DisplayedStudentsContext)
 }
 
+export function useStudentsOptionsContext() {
+  return useContext(StudentsOptionsContext)
+}
+
 export function StudentsProvider({ children }) {
   const [students, dispatch] = useReducer(studentsReducer, initialStudents)
   const [displayedStudents, setDisplayedStudents] = useState([])
+  const [options, setOptions] = useState({
+    search: '',
+    filter: 'all',
+    sorting: 'firstName',
+    sortingOrder: 1
+  })
 
   const theme = useTheme()
 
+  // Load students on mount
   useEffect(() => {
     dispatch({
       type: 'initialised',
@@ -41,12 +48,12 @@ export function StudentsProvider({ children }) {
   }, [students, theme])
 
   return (
-    <StudentsContext.Provider value={students}>
-      <StudentDispatchContext.Provider value={dispatch}>
-        <DisplayedStudentsContext.Provider value={displayedStudents}>
+    <StudentsContext.Provider value={{students, dispatch}}>
+      <DisplayedStudentsContext.Provider value={displayedStudents}>
+        <StudentsOptionsContext.Provider value={options}>
           {children}
-        </DisplayedStudentsContext.Provider>
-      </StudentDispatchContext.Provider>
+        </StudentsOptionsContext.Provider>
+      </DisplayedStudentsContext.Provider>
     </StudentsContext.Provider>
   )
 }

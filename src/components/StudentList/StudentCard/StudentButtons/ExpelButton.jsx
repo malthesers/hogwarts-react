@@ -1,9 +1,9 @@
 import { useRef } from "react"
 import { useTheme } from "../../../../context/ThemeContext"
-import { useStudentDispatchContext } from "../../../../context/StudentsContext"
+import { useStudents } from "../../../../context/StudentsContext"
 
 export default function ExpelButton({ student }) {
-  const dispatch = useStudentDispatchContext()
+  const { students, dispatch } = useStudents()
   const button = useRef(null)
   const howler = useRef(null)
   const theme = useTheme()

@@ -1,9 +1,9 @@
 import { useRef } from "react"
-import { useStudentDispatchContext } from "../../../../context/StudentsContext"
+import { useStudents } from "../../../../context/StudentsContext"
 import { useTheme } from "../../../../context/ThemeContext"
 
 export default function InquisitorButton({ student }) {
-  const dispatch = useStudentDispatchContext()
+  const { students, dispatch } = useStudents()
   const button = useRef(null)
   const theme = useTheme()
 

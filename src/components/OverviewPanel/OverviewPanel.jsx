@@ -3,7 +3,7 @@ import { useTheme } from "../../context/ThemeContext"
 import StudentCounter from "./StudentCounter";
 
 export default function () {
-  const students = useStudents()
+  const {students, dispatch} = useStudents()
   const theme = useTheme()
 
   return (

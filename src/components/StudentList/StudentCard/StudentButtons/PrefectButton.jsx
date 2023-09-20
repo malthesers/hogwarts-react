@@ -1,10 +1,9 @@
 import { useRef } from "react"
-import { useStudentDispatchContext, useStudents } from "../../../../context/StudentsContext"
+import { useStudents } from "../../../../context/StudentsContext"
 import { useTheme } from "../../../../context/ThemeContext"
 
 export default function PrefectButton({ student }) {
-  const dispatch = useStudentDispatchContext()
-  const students = useStudents()
+  const {students, dispatch} = useStudents()
   const button = useRef(null)
   const theme = useTheme()
 
