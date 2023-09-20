@@ -17,6 +17,14 @@ export default function StudentFilters() {
     prefect: 'Prefects',
     inquisitor: 'Inquisitors'
   }
+
+  function updateFilter(filter) {
+    setShowFilteringMethods(false)
+    setOptions({
+      ...options,
+      filter: filter
+    })
+  }
   
   return (
     <div className="grid gap-2 sm:gap-4 grid-cols-[auto_4rem] sm:grid-cols-[7rem_1fr] mb-4">
@@ -28,7 +36,7 @@ export default function StudentFilters() {
         <div className={(showFilteringMethods ? 'max-h-80' : 'max-h-0') + " overflow-hidden duration-[250ms]"}>
           { Object.keys(filteringMethods).map((key) => 
             <p
-              onClick={() => setOptions({...options, filter: key})}
+              onClick={() => updateFilter(key)}
               key={key}
               className={`bg-${theme}-dark border-${theme}-accent` + ' border-2 border-t-0 p-2'}>
               <span>{ filteringMethods[key] }</span>
