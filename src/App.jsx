@@ -9,7 +9,7 @@ function App() {
   const { theme } = useTheme()
 
   return (
-    <main className={`bg-${theme}-light text-${theme}-accent ` + 'font-merinda min-h-screen pb-20'}>
+    <main className={`bg-${theme}-light text-${theme}-accent ` + 'font-merinda min-h-[100dvh] pb-20'}>
       <section className='max-w-6xl mx-auto grid lg:grid-cols-[13rem_auto]'>
         <OverviewPanel />
         <StudentList />
