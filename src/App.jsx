@@ -1,17 +1,12 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useTheme } from './context/ThemeContext'
 import OverviewPanel from './components/OverviewPanel/OverviewPanel'
 import StudentList from './components/StudentList/StudentList'
 import HouseSelector from './components/HouseSelector/HouseSelector'
 
 function App() {
-  const [showHouseSelector, setShowHouseSelector] = useState(false)
-  
+  const [showHouseSelector, setShowHouseSelector] = useState(true)
   const { theme } = useTheme()
-
-  function toggleHouseSelector() {
-    setShowHouseSelector(showHouseSelector => !showHouseSelector)
-  }
 
   return (
     <main className={`bg-${theme}-light text-${theme}-accent ` + 'font-merinda min-h-screen pb-20'}>
@@ -19,7 +14,7 @@ function App() {
         <OverviewPanel />
         <StudentList />
       </section>
-      <HouseSelector toggleHouseSelector={toggleHouseSelector} showHouseSelector={showHouseSelector} />
+      <HouseSelector showHouseSelector={showHouseSelector} setShowHouseSelector={setShowHouseSelector} />
     </main>
   )
 }
