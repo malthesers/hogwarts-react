@@ -4,7 +4,7 @@ import getFormattedStudents from "../utils/reformatting"
 
 const StudentsContext = createContext()
 const DisplayedStudentsContext = createContext()
-const Options = createContext()
+const OptionsContext = createContext()
 
 export function useStudents() {
   return useContext(StudentsContext)
@@ -15,7 +15,7 @@ export function useDisplayedStudents() {
 }
 
 export function useOptions() {
-  return useContext(Options)
+  return useContext(OptionsContext)
 }
 
 export function StudentsProvider({ children }) {
@@ -64,9 +64,9 @@ export function StudentsProvider({ children }) {
   return (
     <StudentsContext.Provider value={{students, dispatch}}>
       <DisplayedStudentsContext.Provider value={displayedStudents}>
-        <Options.Provider value={[options, setOptions]}>
+        <OptionsContext.Provider value={[options, setOptions]}>
           {children}
-        </Options.Provider>
+        </OptionsContext.Provider>
       </DisplayedStudentsContext.Provider>
     </StudentsContext.Provider>
   )
