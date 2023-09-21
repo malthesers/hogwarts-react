@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 const MessagesContext = createContext()
 
@@ -15,6 +15,10 @@ export function MessagesProvider({ children }) {
       description: `${query} ${descriptions[type]}`
     }])
   }
+
+  useEffect(() => {
+    console.log(messages)
+  }, [messages])
 
   return (
     <MessagesContext.Provider value={{messages, addMessage}}>

@@ -1,11 +1,13 @@
 import { useRef } from "react"
 import { useStudents } from "../../../../context/StudentsContext"
 import { useTheme } from "../../../../context/ThemeContext"
+import { useMessages } from "../../../../context/MessagesContext"
 
 export default function InquisitorButton({ student }) {
+  const { addMessage } = useMessages()
   const { dispatch } = useStudents()
-  const button = useRef(null)
   const { theme } = useTheme()
+  const button = useRef(null)
 
   let isHacked = false //remove later
 
@@ -16,12 +18,12 @@ export default function InquisitorButton({ student }) {
       if (student.inquisitor && isHacked) {
         setTimeout(() => {
           student.inquisitor = false
-          // addToMessages('hacking', student.firstName, isCursed)
+          addMessage('hacking', student.firstName)
         }, 2000)
       }
     } else {
       button.current.classList.add('shake')
-      // addToMessages('inquisitor', student.firstName, isCursed)
+      addMessage('inquisitor', student.firstName)
     }
   }
 

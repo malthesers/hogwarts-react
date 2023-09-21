@@ -4,9 +4,9 @@ import { useStudents } from "../../../../context/StudentsContext"
 
 export default function ExpelButton({ student }) {
   const { dispatch } = useStudents()
+  const { theme } = useTheme()
   const button = useRef(null)
   const howler = useRef(null)
-  const { theme } = useTheme()
   
   let expulsionAttempts = 0
 
