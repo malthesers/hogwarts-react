@@ -27,7 +27,7 @@ export function MessagesProvider({ children }) {
   }, [messages])
 
   return (
-    <MessagesContext.Provider value={{messages, addMessage}}>
+    <MessagesContext.Provider value={{messages, addMessage, removeMessage}}>
       {children}
     </MessagesContext.Provider>
   )
