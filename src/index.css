@@ -22,6 +22,13 @@
     animation-fill-mode: both;
     animation-timing-function: ease-in-out;
   }
+
+  .popup {
+    animation-name: popup;
+    animation-duration: 3s;
+    animation-fill-mode: both;
+    animation-timing-function: ease;
+  }
 }
 
 @keyframes shake {
@@ -74,6 +81,21 @@
 
   100% {
     transform: translateX(200%);
+  }
+}
+
+@keyframes popup {
+  0% {
+    transform: translateY(-150%);
+  }
+  20% {
+    transform: translateY(0);
+  }
+  80% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-150%);
   }
 }
 

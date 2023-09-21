@@ -1,5 +1,4 @@
 import { useMessages } from "../../context/MessagesContext"
-import { v4 as uuidv4 } from "uuid"
 import MessagePopup from "./MessagePopup"
 
 export default function MessagesContainer() {
