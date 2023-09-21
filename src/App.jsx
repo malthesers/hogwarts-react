@@ -3,6 +3,7 @@ import { useTheme } from './context/ThemeContext'
 import OverviewPanel from './components/OverviewPanel/OverviewPanel'
 import StudentList from './components/StudentList/StudentList'
 import HouseSelector from './components/HouseSelector/HouseSelector'
+import MessagesContainer from './components/MessagesContainer/MessagesContainer'
 
 function App() {
   const [showHouseSelector, setShowHouseSelector] = useState(true)
@@ -14,6 +15,7 @@ function App() {
         <OverviewPanel />
         <StudentList />
       </section>
+      <MessagesContainer />
       <HouseSelector showHouseSelector={showHouseSelector} setShowHouseSelector={setShowHouseSelector} />
     </main>
   )
