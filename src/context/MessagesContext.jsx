@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
+import { v4 as uuidv4 } from "uuid"
 
 const MessagesContext = createContext()
 
@@ -12,8 +13,13 @@ export function MessagesProvider({ children }) {
   function addMessage(type, query = '') {
     setMessages([...messages, {
       title: titles[type],
-      description: `${query} ${descriptions[type]}`
+      description: `${query} ${descriptions[type]}`,
+      id: uuidv4()
     }])
+
+    // setTimeout(() => {
+    //   setMessages(messages.slice(1))
+    // }, 2500)
   }
 
   useEffect(() => {
