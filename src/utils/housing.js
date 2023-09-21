@@ -1,3 +1,5 @@
+"use strict";
+
 const houses = ["gryffindor", "slytherin", "hufflepuff", "ravenclaw"];
 
 export function animateHouse(part) {
