@@ -1,8 +1,10 @@
 import { useRef } from "react"
-import { useTheme } from "../../../../context/ThemeContext"
+import { useMessages } from "../../../../context/MessagesContext"
 import { useStudents } from "../../../../context/StudentsContext"
+import { useTheme } from "../../../../context/ThemeContext"
 
 export default function ExpelButton({ student }) {
+  const { addMessage } = useMessages()
   const { dispatch } = useStudents()
   const { theme } = useTheme()
   const button = useRef(null)
@@ -18,14 +20,14 @@ export default function ExpelButton({ student }) {
       button.current.classList.add('shake')
   
       if (expulsionAttempts === 1) {
-        // addToMessages('expulsion1')
+        addMessage('expulsion1')
       } else if (expulsionAttempts === 2) {
-        // addToMessages('expulsion2')
+        addMessage('expulsion2')
       } else if (expulsionAttempts === 3) {
-        // addToMessages('expulsion3')
+        addMessage('expulsion3')
         // curseHogwarts()
       } else {
-        // addToMessages('curse', '', isCursed)
+        addMessage('curse')
       }
     } else {
       howler.current.classList.add('howler')
