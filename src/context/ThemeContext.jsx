@@ -10,7 +10,7 @@ export function ThemeProvider({ children }) {
   const [theme, setTheme] = useState('hogwarts');
 
   function updateTheme(house) {
-    setTheme(theme => house)
+    setTheme(house)
     document.querySelector('body').setAttribute('theme', house)
   }
 

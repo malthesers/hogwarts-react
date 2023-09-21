@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useTheme } from './context/ThemeContext'
 import OverviewPanel from './components/OverviewPanel/OverviewPanel'
 import StudentList from './components/StudentList/StudentList'

@@ -22,10 +22,6 @@ export function MessagesProvider({ children }) {
     setMessages(messages.filter(message => message.id !== id))
   }
 
-  useEffect(() => {
-    console.log(messages)
-  }, [messages])
-
   return (
     <MessagesContext.Provider value={{messages, addMessage, removeMessage}}>
       {children}
