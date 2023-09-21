@@ -9,7 +9,7 @@ export default function MessagePopup({ message }) {
         <p className="text-md sm:text-2xl">{ message.title }</p>
         <p className="text-sm sm:text-lg">{ message.description }</p>
       </div>
-      <img src="../assets/icons/messenger-owl.svg" alt="messenger owl" className="w-12 place-self-center"/>
+      <img src="src/assets/icons/messenger-owl.svg" alt="messenger owl" className="w-12 place-self-center"/>
     </div>
   )
 }
