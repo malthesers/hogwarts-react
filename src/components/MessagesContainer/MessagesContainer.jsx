@@ -1,4 +1,5 @@
 import { useMessages } from "../../context/MessagesContext"
+import { v4 as uuidv4 } from "uuid"
 import MessagePopup from "./MessagePopup"
 
 export default function MessagesContainer() {
@@ -8,7 +9,7 @@ export default function MessagesContainer() {
     <div className="fixed z-10 top-0 left-0 w-full h-full p-4 pointer-events-none">
       <div className="relative max-w-2xl mx-auto">
         { messages.map((message) =>
-          <MessagePopup message={message} />
+          <MessagePopup key={uuidv4()} message={message} />
         )}
       </div>
     </div>
