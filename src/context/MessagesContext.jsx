@@ -16,10 +16,10 @@ export function MessagesProvider({ children }) {
       description: `${query} ${descriptions[type]}`,
       id: uuidv4()
     }])
+  }
 
-    // setTimeout(() => {
-    //   setMessages(messages.slice(1))
-    // }, 2500)
+  function removeMessage(id) {
+    setMessages(messages.filter(message => message.id !== id))
   }
 
   useEffect(() => {
