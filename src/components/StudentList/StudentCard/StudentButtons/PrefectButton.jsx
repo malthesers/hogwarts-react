@@ -19,7 +19,7 @@ export default function PrefectButton({ student }) {
       addMessage('house', student.house)
     } else if (housePrefects.some(prefect => prefect.gender === student.gender)) {
       button.current.classList.add('shake')
-      addMessage('house', student.house)
+      addMessage('gender', student.house)
     } else {
       dispatch({ type: 'toggled_prefect', student: student })
     }

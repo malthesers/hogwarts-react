@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useState } from "react";
 import { v4 as uuidv4 } from "uuid"
 
 const MessagesContext = createContext()
