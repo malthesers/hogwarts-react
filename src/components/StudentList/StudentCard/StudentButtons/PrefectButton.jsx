@@ -1,9 +1,11 @@
 import { useRef } from "react"
 import { useStudents } from "../../../../context/StudentsContext"
 import { useTheme } from "../../../../context/ThemeContext"
+import { useMessages } from "../../../../context/MessagesContext"
 
 export default function PrefectButton({ student }) {
-  const {students, dispatch} = useStudents()
+  const { students, dispatch } = useStudents()
+  const { addMessage } = useMessages()
   const { theme } = useTheme()
   const button = useRef(null)
 
@@ -14,10 +16,10 @@ export default function PrefectButton({ student }) {
       dispatch({ type: 'toggled_prefect', student: student })
     } else if (housePrefects.length === 2) {
       button.current.classList.add('shake')
-      // addToMessages('house', student.house, isCursed)
+      addMessage('house', student.house)
     } else if (housePrefects.some(prefect => prefect.gender === student.gender)) {
       button.current.classList.add('shake')
-      // addToMessages('house', student.house, isCursed)
+      addMessage('house', student.house)
     } else {
       dispatch({ type: 'toggled_prefect', student: student })
     }
@@ -27,9 +29,9 @@ export default function PrefectButton({ student }) {
     <button
       ref={button}
       onClick={togglePrefect}
+      disabled={student.expelled}
       onAnimationEnd={() => button.current.classList.remove('shake')}
       className={`bg-${theme}-accent text-${theme}-dark border-${theme}-dark` + " border-2 p-2 flex justify-between"}
-      disabled={student.expelled}
     >
       <p>Prefect</p>
       <span>{ student.prefect ? '-' : '+' }</span>

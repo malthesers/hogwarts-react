@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { useTheme } from './context/ThemeContext'
-import OverviewPanel from './components/OverviewPanel/OverviewPanel'
-import StudentList from './components/StudentList/StudentList'
-import HouseSelector from './components/HouseSelector/HouseSelector'
 import MessagesContainer from './components/MessagesContainer/MessagesContainer'
+import OverviewPanel from './components/OverviewPanel/OverviewPanel'
+import HouseSelector from './components/HouseSelector/HouseSelector'
+import StudentList from './components/StudentList/StudentList'
 
 function App() {
   const [showHouseSelector, setShowHouseSelector] = useState(true)
