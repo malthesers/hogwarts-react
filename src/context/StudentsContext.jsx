@@ -1,6 +1,8 @@
 import { createContext, useContext, useEffect, useReducer, useState } from "react"
+import { useHacking } from "./HackingContext"
 import { useTheme } from "./ThemeContext"
 import getFormattedStudents from "../utils/reformatting"
+import getMyself from '../utils/injection'
 
 const StudentsContext = createContext()
 const OptionsContext = createContext()
@@ -23,15 +25,32 @@ export function StudentsProvider({ children }) {
     sortingOrder: 1
   })
 
+  const { isHacked } = useHacking()
   const { theme } = useTheme()
 
   // Load students on mount
   useEffect(() => {
-    dispatch({
-      type: 'initialised',
-      students: getFormattedStudents()
-    })
+    dispatch({ type: 'initialised', students: getFormattedStudents() })
   }, [])
+
+  // Apply modifications upon hacking
+  useEffect(() => {
+    if (isHacked) {
+      // Reset options
+      setOptions({
+        search: '',
+        filter: 'all',
+        sorting: 'firstName',
+        sortingOrder: 1
+      })
+
+      // Inject self
+      dispatch({ type: 'injected_self', student: getMyself() })
+
+      // Randomise blood
+      dispatch({ type: 'randomised_blood' })
+    }
+  }, [isHacked])
 
   // Calculate displayed students
   useEffect(() => {
@@ -52,6 +71,13 @@ export function StudentsProvider({ children }) {
     filteredStudents.sort((a, b) => {
       return a[options.sorting] > b[options.sorting] ? (1 * options.sortingOrder) : (-1 * options.sortingOrder)
     })
+
+    // If hacked, add me to start of array
+    if (isHacked) {
+      displayedStudents.sort((a, b) => {
+        return a.firstName === 'Malthe' ? -1 : 1
+      })
+    }
 
     setDisplayedStudents(filteredStudents)
   }, [students, options, theme])

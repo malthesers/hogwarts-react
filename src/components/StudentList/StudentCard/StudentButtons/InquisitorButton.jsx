@@ -17,7 +17,6 @@ export default function InquisitorButton({ student }) {
     } else {
       if (student.bloodStatus === 'Pure-blood' || student.house === 'Slytherin') {
         dispatch({ type: 'toggled_inquisitor', student: student, value: true })
-    
         if (isHacked) {
           setTimeout(() => {
             dispatch({ type: 'toggled_inquisitor', student: student, value: false })

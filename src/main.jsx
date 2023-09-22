@@ -10,13 +10,13 @@ import { ThemeProvider } from './context/ThemeContext.jsx'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ThemeProvider>
-      <StudentsProvider>
-        <HackingProvider>
+      <HackingProvider>
+        <StudentsProvider>
           <MessagesProvider>
             <App />
           </MessagesProvider>
-        </HackingProvider>
-      </StudentsProvider>
+        </StudentsProvider>
+      </HackingProvider>
     </ThemeProvider>
   </React.StrictMode>
 )
