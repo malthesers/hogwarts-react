@@ -46,14 +46,9 @@ export function HackingProvider({ children }) {
       })
 
       // Randomise blood
-      
-      // students.value.forEach(student => {
-      //   if (student.bloodStatus === 'Pure-blood') {
-      //     student.bloodStatus = ['Muggle-born', 'Half-blood', 'Squib'][Math.floor(Math.random() * 3)]
-      //   } else {
-      //     student.bloodStatus = 'Pure-blood'
-      //   }
-      // })
+      dispatch({
+        type: 'randomised_blood'
+      })
     }
   }, [isHacked])
 

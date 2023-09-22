@@ -102,5 +102,14 @@ function studentsReducer(students, action) {
         }
       })
     }
+    case 'randomised_blood': {
+      return students.map(student => {
+        if (student.bloodStatus === 'Pure-blood') {
+          return {...student, bloodStatus: ['Muggle-born', 'Half-blood', 'Squib'][Math.floor(Math.random() * 3)]}
+        } else {
+          return {...student, bloodStatus: 'Pure-blood'}
+        }
+      })
+    }
   }
 }
