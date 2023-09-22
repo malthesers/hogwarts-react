@@ -1,3 +1,4 @@
+import { useRef } from "react"
 import { useHacking } from "../../../context/HackingContext"
 import { useOptions } from "../../../context/StudentsContext"
 import { useTheme } from "../../../context/ThemeContext"
@@ -7,6 +8,7 @@ export default function StudentSearching() {
   const [options, setOptions] = useOptions()
   const { setIsHacked } = useHacking()
   const { theme } = useTheme()
+  const input = useRef(null)
 
   function updateSearch(value) {
     setOptions({
@@ -17,6 +19,7 @@ export default function StudentSearching() {
 
   function verifyHacking(e) {
     if (e.code === 'Enter' && e.target.value.toLowerCase() === 'imperio') {
+      input.current.value = ''
       setIsHacked(true)
     }
   }
@@ -24,6 +27,7 @@ export default function StudentSearching() {
   return (
     <div className="grid gap-2 sm:gap-4 grid-cols-[auto_4rem] sm:grid-cols-[7rem_1fr] mb-4">
       <input
+        ref={input}
         onKeyDown={(e) => verifyHacking(e)}
         onChange={(e) => updateSearch(e)}
         type="text"
