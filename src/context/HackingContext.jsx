@@ -11,7 +11,7 @@ export function HackingProvider({ children }) {
   const [isCursed, setIsCursed] = useState(false)
 
   return (
-    <HackingContext.Provider value={{isHacked, isCursed}}>
+    <HackingContext.Provider value={{isHacked, setIsHacked, isCursed, setIsCursed}}>
       {children}
     </HackingContext.Provider>
   )
