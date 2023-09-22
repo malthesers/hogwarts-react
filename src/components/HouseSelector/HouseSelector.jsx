@@ -1,12 +1,15 @@
-import { useEffect, useState } from "react";
-import { useTheme } from "../../context/ThemeContext";
+import { useEffect, useRef, useState } from "react";
 import { animateHouse, unanimateHouse } from "../../utils/housing";
+import { useHacking } from "../../context/HackingContext";
+import { useTheme } from "../../context/ThemeContext";
 import CrestColour from "./CrestColour";
 import CrestPart from "./CrestPart";
 
 export default function HouseSelector({ showHouseSelector, setShowHouseSelector }) {
   const [isAnimating, setIsAnimating] = useState(true)
+  const { isHacked } = useHacking()
   const { theme } = useTheme()
+  const mist = useRef(null)
   
   function animateCrest() {
     const housesOrder = ['gryffindor', 'slytherin', 'ravenclaw', 'hufflepuff', 'hogwarts', '']
@@ -23,6 +26,12 @@ export default function HouseSelector({ showHouseSelector, setShowHouseSelector 
       }, 400 * (index + 1))
     })
   }
+  
+  useEffect(() => {
+    if (isHacked) {
+      mist.current.classList.add('appear')
+    }
+  }, [isHacked])
 
   useEffect(() => {
     animateCrest()
@@ -43,6 +52,7 @@ export default function HouseSelector({ showHouseSelector, setShowHouseSelector 
         <CrestPart house='hufflepuff' />
         <CrestPart house='ravenclaw' />
         <CrestPart house='hogwarts' />
+        <img onAnimationEnd={animateCrest} ref={mist} src="src/assets/hogwarts-parts/imperio-mist.svg" alt="imperio mist" className="w-0 place-self-center z-20"/>
       </div>
     </footer>
   )
