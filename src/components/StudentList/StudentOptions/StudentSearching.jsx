@@ -11,14 +11,21 @@ export default function StudentSearching() {
   function updateSearch(value) {
     setOptions({
       ...options,
-      search: value
+      search: value.target.value
     })
+  }
+
+  function verifyHacking(e) {
+    if (e.code === 'Enter' && e.target.value.toLowerCase() === 'imperio') {
+      setIsHacked(true)
+    }
   }
 
   return (
     <div className="grid gap-2 sm:gap-4 grid-cols-[auto_4rem] sm:grid-cols-[7rem_1fr] mb-4">
       <input
-        onChange={(e) => updateSearch(e.target.value)}
+        onKeyDown={(e) => verifyHacking(e)}
+        onChange={(e) => updateSearch(e)}
         type="text"
         placeholder="Search..."
         className={`bg-${theme}-dark border-${theme}-accent placeholder-${theme}-accent` + ' w-full border-2 p-2 outline-none placeholder:opacity-60'}
