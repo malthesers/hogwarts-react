@@ -1,9 +1,11 @@
 import { useRef } from "react"
 import { useMessages } from "../../../../context/MessagesContext"
 import { useStudents } from "../../../../context/StudentsContext"
+import { useHacking } from "../../../../context/HackingContext"
 import { useTheme } from "../../../../context/ThemeContext"
 
 export default function ExpelButton({ student }) {
+  const { setIsCursed } = useHacking()
   const { addMessage } = useMessages()
   const { dispatch } = useStudents()
   const { theme } = useTheme()
@@ -24,9 +26,9 @@ export default function ExpelButton({ student }) {
         addMessage('expulsion2')
       } else if (expulsionAttempts.current === 3) {
         addMessage('expulsion3')
-        // curseHogwarts()
       } else {
         addMessage('curse')
+        setIsCursed(true)
       }
     } else {
       howler.current.classList.add('howler')
