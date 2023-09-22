@@ -9,7 +9,6 @@ export default function ExpelButton({ student }) {
   const { theme } = useTheme()
   const button = useRef(null)
   const howler = useRef(null)
-  
   let expulsionAttempts = 0
 
   function expelStudent() {
@@ -36,10 +35,11 @@ export default function ExpelButton({ student }) {
 
   return (
     <button
-      onClick={expelStudent}
       ref={button}
-      className={`bg-${theme}-accent text-${theme}-dark border-${theme}-dark` + ' border-2 p-2 flex justify-between relative sm:col-span-2 md:col-span-1'}
+      onClick={expelStudent}
       disabled={student.expelled}
+      onAnimationEnd={() => button.current.classList.remove('shake')}
+      className={`bg-${theme}-accent text-${theme}-dark border-${theme}-dark` + ' border-2 p-2 flex justify-between relative sm:col-span-2 md:col-span-1'}
     >
       <p>{ student.expelled ? 'Expelled' : 'Expel Student' }</p>
       <img onAnimationEnd={() => dispatch({ type: 'expelled_student', student: student })} ref={howler} src="src/assets/icons/howler.svg" alt="howler expulsion icon" className="absolute w-20 rotate-[10deg] top-[-7%] right-[3%]" />
