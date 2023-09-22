@@ -9,20 +9,20 @@ export default function ExpelButton({ student }) {
   const { theme } = useTheme()
   const button = useRef(null)
   const howler = useRef(null)
-  let expulsionAttempts = 0
+  let expulsionAttempts = useRef(0)
 
   function expelStudent() {
     if (student.firstName === 'Malthe') {
       // Increment expulsion attempts
-      expulsionAttempts++
+      expulsionAttempts.current++
   
       button.current.classList.add('shake')
   
-      if (expulsionAttempts === 1) {
+      if (expulsionAttempts.current === 1) {
         addMessage('expulsion1')
-      } else if (expulsionAttempts === 2) {
+      } else if (expulsionAttempts.current === 2) {
         addMessage('expulsion2')
-      } else if (expulsionAttempts === 3) {
+      } else if (expulsionAttempts.current === 3) {
         addMessage('expulsion3')
         // curseHogwarts()
       } else {
