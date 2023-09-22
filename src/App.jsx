@@ -13,7 +13,7 @@ function App() {
 
   useEffect(() => {
     if (isHacked) {
-      // setShowHouseSelector(true)
+      setShowHouseSelector(true)
     }
   }, [isHacked])
 
