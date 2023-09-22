@@ -70,9 +70,10 @@ const initialStudents = []
 function studentsReducer(students, action) {
   switch (action.type) {
     case 'initialised': {
-      return [
-        ...action.students
-      ]
+      return [...action.students]
+    }
+    case 'injected_self': {
+      return [...students, action.student]
     }
     case 'toggled_prefect': {
       return students.map(student => {
