@@ -102,31 +102,19 @@ function studentsReducer(students, action) {
       return [...students, action.student]
     }
     case 'toggled_prefect': {
-      return students.map(student => {
-        if (student.id === action.student.id) {
-          return {...action.student, prefect: !action.student.prefect}
-        } else {
-          return student
-        }
-      })
+      return students.map(student =>
+        student.id === action.student.id ? {...action.student, prefect: !action.student.prefect} : student
+      )
     }
     case 'toggled_inquisitor': {
-      return students.map(student => {
-        if (student.id === action.student.id) {
-          return {...action.student, inquisitor: action.value}
-        } else {
-          return student
-        }
-      })
+      return students.map(student => 
+        student.id === action.student.id ? {...action.student, inquisitor: action.value} : student
+      )
     }
     case 'expelled_student': {
-      return students.map(student => {
-        if (student.id === action.student.id) {
-          return {...action.student, expelled: true}
-        } else {
-          return student
-        }
-      })
+      return students.map(student => 
+        student.id === action.student.id ? {...action.student, expelled: true} : student
+      )
     }
     case 'randomised_blood': {
       return students.map(student => {
