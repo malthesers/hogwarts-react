@@ -29,7 +29,7 @@ export default function HouseSelector({ showHouseSelector, setShowHouseSelector 
   
   useEffect(() => {
     if (isHacked) {
-      mist.current.classList.add('appear')
+      // mist.current.classList.add('appear')
     }
   }, [isHacked])
 
