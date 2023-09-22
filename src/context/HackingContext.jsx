@@ -40,15 +40,10 @@ export function HackingProvider({ children }) {
       })
 
       // Inject self
-      dispatch({
-        type: 'injected_self',
-        student: me
-      })
+      dispatch({ type: 'injected_self', student: me })
 
       // Randomise blood
-      dispatch({
-        type: 'randomised_blood'
-      })
+      dispatch({ type: 'randomised_blood' })
     }
   }, [isHacked])
 

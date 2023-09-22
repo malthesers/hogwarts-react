@@ -6,24 +6,28 @@ import { useTheme } from "../../../../context/ThemeContext"
 
 export default function InquisitorButton({ student }) {
   const { addMessage } = useMessages()
-  const { isHacked } = useHacking()
   const { dispatch } = useStudents()
+  const { isHacked } = useHacking()
   const { theme } = useTheme()
   const button = useRef(null)
 
   function toggleInquisitor() {
-    if (student.bloodStatus === 'Pure-blood' || student.house === 'Slytherin') {
-      dispatch({ type: 'toggled_inquisitor', student: student })
-  
-      if (student.inquisitor && isHacked) {
-        setTimeout(() => {
-          student.inquisitor = false
-          addMessage('hacking', student.firstName)
-        }, 2000)
-      }
+    if (student.inquisitor) {
+      dispatch({ type: 'toggled_inquisitor', student: student, value: false })
     } else {
-      button.current.classList.add('shake')
-      addMessage('inquisitor', student.firstName)
+      if (student.bloodStatus === 'Pure-blood' || student.house === 'Slytherin') {
+        dispatch({ type: 'toggled_inquisitor', student: student, value: true })
+    
+        if (isHacked) {
+          setTimeout(() => {
+            dispatch({ type: 'toggled_inquisitor', student: student, value: false })
+            addMessage('hacking', student.firstName)
+          }, 2000)
+        }
+      } else {
+        button.current.classList.add('shake')
+        addMessage('inquisitor', student.firstName)
+      }
     }
   }
 
