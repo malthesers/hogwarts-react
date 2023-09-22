@@ -1,15 +1,15 @@
 import { useRef } from "react"
 import { useStudents } from "../../../../context/StudentsContext"
-import { useTheme } from "../../../../context/ThemeContext"
 import { useMessages } from "../../../../context/MessagesContext"
+import { useHacking } from "../../../../context/HackingContext"
+import { useTheme } from "../../../../context/ThemeContext"
 
 export default function InquisitorButton({ student }) {
   const { addMessage } = useMessages()
+  const { isHacked } = useHacking()
   const { dispatch } = useStudents()
   const { theme } = useTheme()
   const button = useRef(null)
-
-  let isHacked = false //remove later
 
   function toggleInquisitor() {
     if (student.bloodStatus === 'Pure-blood' || student.house === 'Slytherin') {

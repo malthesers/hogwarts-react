@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { createContext, useContext, useState } from "react"
 
 const HackingContext = createContext()
 
@@ -7,8 +7,8 @@ export function useHacking() {
 }
 
 export function HackingProvider({ children }) {
-  const [isHacked, setIsHacked] = useState([])
-  const [isCursed, setIsCursed] = useState([])
+  const [isHacked, setIsHacked] = useState(false)
+  const [isCursed, setIsCursed] = useState(false)
 
   return (
     <HackingContext.Provider value={{isHacked, isCursed}}>
