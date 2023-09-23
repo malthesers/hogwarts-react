@@ -15,10 +15,9 @@ export default function ExpelButton({ student }) {
 
   function expelStudent() {
     if (student.firstName === 'Malthe') {
-      // Increment expulsion attempts
-      expulsionAttempts.current++
-  
       button.current.classList.add('shake')
+      
+      expulsionAttempts.current++
   
       if (expulsionAttempts.current === 1) {
         addMessage('expulsion1')
