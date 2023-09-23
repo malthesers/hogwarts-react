@@ -1,5 +1,10 @@
 import { createContext, useContext, useState } from "react";
 import { v4 as uuidv4 } from "uuid"
+import PropTypes from 'prop-types';
+
+MessagesProvider.propTypes = {
+  children: PropTypes.object
+}
 
 const MessagesContext = createContext()
 
