@@ -74,7 +74,7 @@ export function StudentsProvider({ children }) {
 
     // If hacked, add me to start of array
     if (isHacked) {
-      displayedStudents.sort((a, b) => {
+      filteredStudents.sort((a) => {
         return a.firstName === 'Malthe' ? -1 : 1
       })
     }
