@@ -1,4 +1,9 @@
 import { createContext, useContext, useState } from "react"
+import PropTypes from 'prop-types';
+
+HackingProvider.propTypes = {
+  children: PropTypes.object
+}
 
 const HackingContext = createContext()
 
