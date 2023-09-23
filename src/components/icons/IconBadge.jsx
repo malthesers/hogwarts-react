@@ -1,3 +1,9 @@
+import PropTypes from 'prop-types';
+
+IconBadge.propTypes = {
+  className: PropTypes.string
+}
+
 export default function IconBadge({ className }) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 137.5 159.73" className={className}>
