@@ -1,5 +1,11 @@
 import { useTheme } from "../../context/ThemeContext"
 import { animateHouse, unanimateHouse } from "../../utils/housing"
+import PropTypes from 'prop-types';
+
+CrestPart.propTypes = {
+  house: PropTypes.string,
+  part: PropTypes.string
+}
 
 export default function CrestPart({ house, part = '' }) {
   const { updateTheme } = useTheme()
