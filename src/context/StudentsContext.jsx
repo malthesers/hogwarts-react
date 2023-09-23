@@ -3,6 +3,11 @@ import { useHacking } from "./HackingContext"
 import { useTheme } from "./ThemeContext"
 import getFormattedStudents from "../utils/reformatting"
 import getMyself from '../utils/injection'
+import PropTypes from 'prop-types';
+
+StudentsProvider.propTypes = {
+  children: PropTypes.object
+}
 
 const StudentsContext = createContext()
 const OptionsContext = createContext()
