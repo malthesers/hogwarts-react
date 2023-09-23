@@ -1,3 +1,9 @@
+import PropTypes from 'prop-types';
+
+IconHat.propTypes = {
+  className: PropTypes.string
+}
+
 export default function IconHat({ className }) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 53.01 46.9" className={className}>
