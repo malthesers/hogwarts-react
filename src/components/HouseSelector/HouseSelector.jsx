@@ -4,6 +4,13 @@ import { useHacking } from "../../context/HackingContext";
 import { useTheme } from "../../context/ThemeContext";
 import CrestColour from "./CrestColour";
 import CrestPart from "./CrestPart";
+import PropTypes from 'prop-types';
+
+HouseSelector.propTypes = {
+  showHouseSelector: PropTypes.bool,
+  setShowHouseSelector: PropTypes.func
+}
+
 
 export default function HouseSelector({ showHouseSelector, setShowHouseSelector }) {
   const [isAnimating, setIsAnimating] = useState(true)
