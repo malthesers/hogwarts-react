@@ -1,4 +1,9 @@
 import { createContext, useContext, useState } from "react";
+import PropTypes from 'prop-types';
+
+ThemeProvider.propTypes = {
+  children: PropTypes.object
+}
 
 const ThemeContext = createContext()
 
