@@ -1,3 +1,11 @@
+import PropTypes from 'prop-types';
+
+StudentCounter.propTypes = {
+  src: PropTypes.string,
+  type: PropTypes.string,
+  count: PropTypes.number,
+}
+
 export default function StudentCounter({ src, type = 'crests', count }) {
   return (
     <span className="w-8 h-8 inline-grid place-content-center">

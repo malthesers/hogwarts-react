@@ -11,7 +11,6 @@ HouseSelector.propTypes = {
   setShowHouseSelector: PropTypes.func
 }
 
-
 export default function HouseSelector({ showHouseSelector, setShowHouseSelector }) {
   const [isAnimating, setIsAnimating] = useState(true)
   const { isHacked } = useHacking()
