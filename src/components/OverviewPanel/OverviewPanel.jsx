@@ -2,7 +2,7 @@ import { useStudents } from "../../context/StudentsContext";
 import { useTheme } from "../../context/ThemeContext"
 import StudentCounter from "./StudentCounter";
 
-export default function () {
+export default function OverviewPanel() {
   const {students, displayedStudents} = useStudents()
   const { theme } = useTheme()
 
