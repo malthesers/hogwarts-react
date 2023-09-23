@@ -44,7 +44,13 @@ export default function ExpelButton({ student }) {
       className={`bg-${theme}-accent text-${theme}-dark border-${theme}-dark` + ' border-2 p-2 flex justify-between relative sm:col-span-2 md:col-span-1'}
     >
       <p>{ student.expelled ? 'Expelled' : 'Expel Student' }</p>
-      <img onAnimationEnd={() => dispatch({ type: 'expelled_student', student: student })} ref={howler} src="src/assets/icons/howler.svg" alt="howler expulsion icon" className="absolute w-20 rotate-[10deg] top-[-7%] right-[3%]" />
+      <img
+        onAnimationEnd={() => dispatch({ type: 'expelled_student', student: student })}
+        className="absolute w-20 rotate-[10deg] top-[-7%] right-[3%]"
+        src="src/assets/icons/howler.svg"
+        alt="howler expulsion icon"
+        ref={howler}
+      />
     </button>
   )
 }
