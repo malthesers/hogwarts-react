@@ -1,5 +1,5 @@
 import StudentDetails from "./StudentDetails"
-import { useRef, useState } from "react"
+import { useState } from "react"
 
 export default function StudentCard({ student }) {
   const [showDetails, setShowDetails] = useState(false)
