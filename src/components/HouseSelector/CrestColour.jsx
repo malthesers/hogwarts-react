@@ -1,3 +1,9 @@
+import PropTypes from 'prop-types';
+
+CrestColour.propTypes = {
+  className: PropTypes.string
+}
+
 export default function CrestColour({ house }) {
   const colours = {
     gryffindor: 'red',
