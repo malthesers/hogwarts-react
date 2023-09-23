@@ -1,3 +1,9 @@
+import PropTypes from 'prop-types'
+
+IconChevron.propTypes = {
+  className: PropTypes.string
+}
+
 export default function IconChevron({ className }) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 178.62 116.01" className={className}>
