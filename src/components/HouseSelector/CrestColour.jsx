@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
 CrestColour.propTypes = {
-  className: PropTypes.string
+  house: PropTypes.string
 }
 
 export default function CrestColour({ house }) {
