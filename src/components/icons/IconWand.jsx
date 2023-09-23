@@ -1,3 +1,9 @@
+import PropTypes from 'prop-types';
+
+IconWand.propTypes = {
+  className: PropTypes.string
+}
+
 export default function IconWand({ className }) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 46.73 54.04" className={className}>
