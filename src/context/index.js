@@ -14,3 +14,8 @@ export const OptionsContext = createContext();
 export function useOptions() {
   return useContext(OptionsContext);
 }
+
+export const HackingContext = createContext();
+export function useHacking() {
+  return useContext(HackingContext);
+}

@@ -1,7 +1,7 @@
 import { useRef } from "react"
 import { useStudents } from "../../../../context/"
 import { useMessages } from "../../../../context/MessagesContext"
-import { useHacking } from "../../../../context/HackingContext"
+import { useHacking } from "../../../../context/"
 import { useTheme } from "../../../../context/"
 import PropTypes from 'prop-types';
 

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { animateHouse, unanimateHouse } from "../../utils/housing";
-import { useHacking } from "../../context/HackingContext";
+import { useHacking } from "../../context/";
 import { useTheme } from "../../context/";
 import CrestColour from "./CrestColour";
 import CrestPart from "./CrestPart";

@@ -1,5 +1,5 @@
 import { useRef } from "react"
-import { useHacking } from "../../../context/HackingContext"
+import { useHacking } from "../../../context/"
 import { useOptions } from "../../../context/"
 import { useTheme } from "../../../context/"
 import IconWand from "../../icons/IconWand"
