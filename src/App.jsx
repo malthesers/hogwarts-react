@@ -1,19 +1,20 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { useHacking } from './context/HackingContext'
 import { useTheme } from './context/ThemeContext'
 import MessagesContainer from './components/MessagesContainer/MessagesContainer'
 import OverviewPanel from './components/OverviewPanel/OverviewPanel'
 import HouseSelector from './components/HouseSelector/HouseSelector'
 import StudentList from './components/StudentList/StudentList'
+import useToggle from './hooks/useToggle'
 
 function App() {
-  const [showHouseSelector, setShowHouseSelector] = useState(true)
+  const [showHouseSelector, toggleHouseSelector] = useToggle(true)
   const { isHacked } = useHacking()
   const { theme } = useTheme()
 
   useEffect(() => {
     if (isHacked) {
-      setShowHouseSelector(true)
+      toggleHouseSelector(true)
     }
   }, [isHacked])
 
@@ -24,7 +25,7 @@ function App() {
         <StudentList />
       </section>
       <MessagesContainer />
-      <HouseSelector showHouseSelector={showHouseSelector} setShowHouseSelector={setShowHouseSelector} />
+      <HouseSelector showHouseSelector={showHouseSelector} toggleHouseSelector={toggleHouseSelector} />
     </main>
   )
 }
