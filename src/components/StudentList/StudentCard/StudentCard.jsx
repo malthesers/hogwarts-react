@@ -1,5 +1,10 @@
 import useToggle from "../../../hooks/useToggle"
 import StudentDetails from "./StudentDetails"
+import PropTypes from 'prop-types';
+
+StudentCard.propTypes = {
+  student: PropTypes.object
+}
 
 export default function StudentCard({ student }) {
   const [showDetails, toggleDetails] = useToggle(false)
