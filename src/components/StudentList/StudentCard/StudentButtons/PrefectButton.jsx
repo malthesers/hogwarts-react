@@ -2,6 +2,11 @@ import { useRef } from "react"
 import { useStudents } from "../../../../context/StudentsContext"
 import { useTheme } from "../../../../context/ThemeContext"
 import { useMessages } from "../../../../context/MessagesContext"
+import PropTypes from 'prop-types';
+
+PrefectButton.propTypes = {
+  student: PropTypes.object
+}
 
 export default function PrefectButton({ student }) {
   const { students, dispatch } = useStudents()
