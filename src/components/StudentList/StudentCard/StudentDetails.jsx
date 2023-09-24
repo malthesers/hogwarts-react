@@ -1,4 +1,9 @@
 import { StudentButtons } from './StudentButtons/StudentButtons';
+import PropTypes from 'prop-types';
+
+StudentDetails.propTypes = {
+  student: PropTypes.object
+}
 
 export default function StudentDetails({ student, showDetails }) {
   return (
