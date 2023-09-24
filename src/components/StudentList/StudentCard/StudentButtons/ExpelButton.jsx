@@ -3,6 +3,12 @@ import { useMessages } from "../../../../context/MessagesContext"
 import { useStudents } from "../../../../context/StudentsContext"
 import { useHacking } from "../../../../context/HackingContext"
 import { useTheme } from "../../../../context/ThemeContext"
+import PropTypes from 'prop-types';
+
+ExpelButton.propTypes = {
+  student: PropTypes.object
+}
+
 
 export default function ExpelButton({ student }) {
   const { setIsCursed } = useHacking()
