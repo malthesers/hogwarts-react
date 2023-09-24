@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 
 HouseSelector.propTypes = {
   showHouseSelector: PropTypes.bool,
-  setShowHouseSelector: PropTypes.func
+  toggleHouseSelector: PropTypes.func
 }
 
 export default function HouseSelector({ showHouseSelector, toggleHouseSelector }) {
