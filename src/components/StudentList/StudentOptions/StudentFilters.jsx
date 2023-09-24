@@ -27,8 +27,8 @@ export default function StudentFilters() {
   }
   
   return (
-    <div className="grid gap-2 sm:gap-4 grid-cols-[auto_4rem] sm:grid-cols-[7rem_1fr] mb-4">
-      <div className="cursor-pointer">
+    <div className='grid gap-2 sm:gap-4 grid-cols-[auto_4rem] sm:grid-cols-[7rem_1fr] mb-4'>
+      <div className='cursor-pointer'>
         <p onClick={toggleFilteringMethods} className={`bg-${theme}-dark border-${theme}-accent` + ' border-2 p-2 flex justify-between items-center'}>
           <span>Filter by...</span>
           <IconChevron className={(showFilteringMethods ? 'rotate-180' : 'rotate-0') + ` fill-${theme}-accent` + ' h-4 duration-300'}/>

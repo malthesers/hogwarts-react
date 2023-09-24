@@ -6,9 +6,9 @@ export default function StudentList () {
   const { displayedStudents } = useStudents()
 
   return (
-    <section className="p-4">
+    <section className='p-4'>
       <StudentOptions />
-      <div className="relative">
+      <div className='relative'>
         {displayedStudents.map((student) =>
           <StudentCard key={student.firstName} student={student} />
         )}
