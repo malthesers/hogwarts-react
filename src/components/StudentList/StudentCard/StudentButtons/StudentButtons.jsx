@@ -1,6 +1,6 @@
-import InquisitorButton from "./InquisitorButton"
-import PrefectButton from "./PrefectButton"
-import ExpelButton from "./ExpelButton"
+import InquisitorButton from './InquisitorButton'
+import PrefectButton from './PrefectButton'
+import ExpelButton from './ExpelButton'
 import PropTypes from 'prop-types';
 
 StudentButtons.propTypes = {

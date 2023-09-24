@@ -1,5 +1,5 @@
-import useToggle from "../../../hooks/useToggle"
-import StudentDetails from "./StudentDetails"
+import useToggle from '../../../hooks/useToggle'
+import StudentDetails from './StudentDetails'
 import PropTypes from 'prop-types';
 
 StudentCard.propTypes = {

@@ -1,8 +1,8 @@
-import { useOptions } from "../../../context/"
-import { useTheme } from "../../../context/"
-import IconChevron from "../../icons/IconChevron"
-import IconBadge from "../../icons/IconBadge"
-import useToggle from "../../../hooks/useToggle"
+import { useOptions } from '../../../context/'
+import { useTheme } from '../../../context/'
+import IconChevron from '../../icons/IconChevron'
+import IconBadge from '../../icons/IconBadge'
+import useToggle from '../../../hooks/useToggle'
 
 export default function StudentFilters() {
   const [showFilteringMethods, toggleFilteringMethods] = useToggle(false)
@@ -33,7 +33,7 @@ export default function StudentFilters() {
           <span>Filter by...</span>
           <IconChevron className={(showFilteringMethods ? 'rotate-180' : 'rotate-0') + ` fill-${theme}-accent` + ' h-4 duration-300'}/>
         </p>
-        <div className={(showFilteringMethods ? 'max-h-80' : 'max-h-0') + " overflow-hidden duration-[250ms]"}>
+        <div className={(showFilteringMethods ? 'max-h-80' : 'max-h-0') + ' overflow-hidden duration-[250ms]'}>
           { Object.keys(filteringMethods).map((key) => 
             <p
               key={key}

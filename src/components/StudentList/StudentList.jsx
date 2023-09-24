@@ -1,6 +1,6 @@
-import { useStudents } from "../../context/"
-import StudentCard from "./StudentCard/StudentCard"
-import StudentOptions from "./StudentOptions/StudentOptions"
+import { useStudents } from '../../context/'
+import StudentCard from './StudentCard/StudentCard'
+import StudentOptions from './StudentOptions/StudentOptions'
 
 export default function StudentList () {
   const { displayedStudents } = useStudents()

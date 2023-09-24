@@ -1,9 +1,9 @@
-import { useEffect, useRef, useState } from "react";
-import { animateHouse, unanimateHouse } from "../../utils/housing";
-import { useHacking } from "../../context/";
-import { useTheme } from "../../context/";
-import CrestColour from "./CrestColour";
-import CrestPart from "./CrestPart";
+import { useEffect, useRef, useState } from 'react';
+import { animateHouse, unanimateHouse } from '../../utils/housing';
+import { useHacking } from '../../context/';
+import { useTheme } from '../../context/';
+import CrestColour from './CrestColour';
+import CrestPart from './CrestPart';
 import PropTypes from 'prop-types';
 
 HouseSelector.propTypes = {

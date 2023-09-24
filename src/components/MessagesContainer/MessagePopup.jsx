@@ -1,5 +1,5 @@
-import { useMessages } from "../../context/"
-import { useTheme } from "../../context/"
+import { useMessages } from '../../context/'
+import { useTheme } from '../../context/'
 import PropTypes from 'prop-types';
 
 MessagePopup.propTypes = {

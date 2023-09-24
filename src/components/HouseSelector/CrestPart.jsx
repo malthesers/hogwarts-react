@@ -1,5 +1,5 @@
-import { useTheme } from "../../context/"
-import { animateHouse, unanimateHouse } from "../../utils/housing"
+import { useTheme } from '../../context/'
+import { animateHouse, unanimateHouse } from '../../utils/housing'
 import PropTypes from 'prop-types';
 
 CrestPart.propTypes = {

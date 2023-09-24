@@ -9,6 +9,7 @@ module.exports = {
   rules: {
     "react-refresh/only-export-components": ["warn", { allowConstantExport: true }],
     "react-hooks/exhaustive-deps": "off",
+    quotes: ["error", "single"],
     "jsx-quotes": ["error", "prefer-single"],
   },
 };

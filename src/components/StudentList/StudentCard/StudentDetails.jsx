@@ -15,10 +15,10 @@ export default function StudentDetails({ student, showDetails }) {
           <p>Blood status: {student.bloodStatus}</p>
         </div>
         <div className='mt-4 md:mt-0 flex gap-2 justify-between col-span-3 lg:col-span-1'>
-          <img src={`./images/badges/cap-${student.house.toLowerCase()}.svg`} className={ (student.captain ? 'opacity-100' : 'opacity-50') + " h-16 sm:h-20 duration-300" } />
-          <img src='/images/badges/prefect.svg' className={ (student.prefect ? 'opacity-100' : 'opacity-50') + " h-16 sm:h-20 duration-300" } />
-          <img src='/images/badges/inquisitor.svg' className={ (student.inquisitor ? 'opacity-100' : 'opacity-50') + " h-16 sm:h-20 duration-300" } />
-          <img src='/images/badges/expelled.svg' className={ (student.expelled ? 'opacity-100' : 'opacity-50') + " h-16 sm:h-20 duration-300" } />
+          <img src={`./images/badges/cap-${student.house.toLowerCase()}.svg`} className={ (student.captain ? 'opacity-100' : 'opacity-50') + ' h-16 sm:h-20 duration-300' } />
+          <img src='/images/badges/prefect.svg' className={ (student.prefect ? 'opacity-100' : 'opacity-50') + ' h-16 sm:h-20 duration-300' } />
+          <img src='/images/badges/inquisitor.svg' className={ (student.inquisitor ? 'opacity-100' : 'opacity-50') + ' h-16 sm:h-20 duration-300' } />
+          <img src='/images/badges/expelled.svg' className={ (student.expelled ? 'opacity-100' : 'opacity-50') + ' h-16 sm:h-20 duration-300' } />
         </div>
       </div>
       <StudentButtons student={student} />

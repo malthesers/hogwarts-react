@@ -1,14 +1,14 @@
 export default function getMyself() {
   const student = {
-    fullName: "Malthe Kusk Lauritsen",
-    firstName: "Malthe",
-    middleName: "Kusk",
+    fullName: 'Malthe Kusk Lauritsen',
+    firstName: 'Malthe',
+    middleName: 'Kusk',
     nickName: undefined,
-    lastName: "Lauritsen",
-    gender: "Male",
+    lastName: 'Lauritsen',
+    gender: 'Male',
     house: getRandomHouse(),
-    photo: `default.png`,
-    bloodStatus: "Half-breed",
+    photo: 'default.png',
+    bloodStatus: 'Half-breed',
     captain: false,
     prefect: false,
     expelled: false,
@@ -19,5 +19,5 @@ export default function getMyself() {
 }
 
 function getRandomHouse() {
-  return ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"][Math.floor(Math.random() * 4)];
+  return ['Gryffindor', 'Hufflepuff', 'Ravenclaw', 'Slytherin'][Math.floor(Math.random() * 4)];
 }

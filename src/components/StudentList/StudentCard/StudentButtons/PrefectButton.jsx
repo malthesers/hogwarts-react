@@ -1,7 +1,7 @@
-import { useRef } from "react"
-import { useStudents } from "../../../../context/"
-import { useTheme } from "../../../../context/"
-import { useMessages } from "../../../../context/"
+import { useRef } from 'react'
+import { useStudents } from '../../../../context/'
+import { useTheme } from '../../../../context/'
+import { useMessages } from '../../../../context/'
 import PropTypes from 'prop-types';
 
 PrefectButton.propTypes = {
@@ -36,7 +36,7 @@ export default function PrefectButton({ student }) {
       onClick={togglePrefect}
       disabled={student.expelled}
       onAnimationEnd={() => button.current.classList.remove('shake')}
-      className={`bg-${theme}-accent text-${theme}-dark border-${theme}-dark` + " border-2 p-2 flex justify-between"}
+      className={`bg-${theme}-accent text-${theme}-dark border-${theme}-dark` + ' border-2 p-2 flex justify-between'}
     >
       <p>Prefect</p>
       <span>{ student.prefect ? '-' : '+' }</span>

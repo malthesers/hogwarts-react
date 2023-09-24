@@ -1,5 +1,5 @@
-import { useMessages } from "../../context/"
-import MessagePopup from "./MessagePopup"
+import { useMessages } from '../../context/'
+import MessagePopup from './MessagePopup'
 
 export default function MessagesContainer() {
   const { messages } = useMessages()

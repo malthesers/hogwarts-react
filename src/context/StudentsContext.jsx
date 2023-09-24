@@ -1,6 +1,6 @@
-import { StudentsContext, OptionsContext, useHacking, useTheme } from "./"
-import { useEffect, useReducer, useState } from "react"
-import getFormattedStudents from "../utils/reformatting"
+import { StudentsContext, OptionsContext, useHacking, useTheme } from './'
+import { useEffect, useReducer, useState } from 'react'
+import getFormattedStudents from '../utils/reformatting'
 import getMyself from '../utils/injection'
 import PropTypes from 'prop-types';
 

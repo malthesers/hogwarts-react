@@ -1,8 +1,8 @@
-import { useRef } from "react"
-import { useHacking } from "../../../context/"
-import { useOptions } from "../../../context/"
-import { useTheme } from "../../../context/"
-import IconWand from "../../icons/IconWand"
+import { useRef } from 'react'
+import { useHacking } from '../../../context/'
+import { useOptions } from '../../../context/'
+import { useTheme } from '../../../context/'
+import IconWand from '../../icons/IconWand'
 
 export default function StudentSearching() {
   const [options, setOptions] = useOptions()
