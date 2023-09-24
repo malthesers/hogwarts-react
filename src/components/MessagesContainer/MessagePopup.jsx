@@ -1,5 +1,10 @@
 import { useMessages } from "../../context/MessagesContext"
 import { useTheme } from "../../context/ThemeContext"
+import PropTypes from 'prop-types';
+
+MessagePopup.propTypes = {
+  message: PropTypes.object
+}
 
 export default function MessagePopup({ message }) {
   const { removeMessage } = useMessages()
