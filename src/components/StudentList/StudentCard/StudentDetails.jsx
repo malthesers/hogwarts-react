@@ -2,7 +2,8 @@ import { StudentButtons } from './StudentButtons/StudentButtons';
 import PropTypes from 'prop-types';
 
 StudentDetails.propTypes = {
-  student: PropTypes.object
+  student: PropTypes.object,
+  showDetails: PropTypes.bool
 }
 
 export default function StudentDetails({ student, showDetails }) {
