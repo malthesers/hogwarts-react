@@ -1,6 +1,5 @@
 import useToggle from "../../../hooks/useToggle"
 import StudentDetails from "./StudentDetails"
-import { useState } from "react"
 
 export default function StudentCard({ student }) {
   const [showDetails, toggleDetails] = useToggle(false)
