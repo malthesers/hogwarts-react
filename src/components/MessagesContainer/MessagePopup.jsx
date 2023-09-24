@@ -1,4 +1,4 @@
-import { useMessages } from "../../context/MessagesContext"
+import { useMessages } from "../../context/"
 import { useTheme } from "../../context/"
 import PropTypes from 'prop-types';
 

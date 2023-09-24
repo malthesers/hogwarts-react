@@ -19,3 +19,8 @@ export const HackingContext = createContext();
 export function useHacking() {
   return useContext(HackingContext);
 }
+
+export const MessagesContext = createContext();
+export function useMessages() {
+  return useContext(MessagesContext);
+}

@@ -1,7 +1,7 @@
 import { useRef } from "react"
 import { useStudents } from "../../../../context/"
 import { useTheme } from "../../../../context/"
-import { useMessages } from "../../../../context/MessagesContext"
+import { useMessages } from "../../../../context/"
 import PropTypes from 'prop-types';
 
 PrefectButton.propTypes = {
