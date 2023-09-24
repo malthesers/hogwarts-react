@@ -1,4 +1,4 @@
-import { useStudents } from "../../context/StudentsContext"
+import { useStudents } from "../../context/"
 import StudentCard from "./StudentCard/StudentCard"
 import StudentOptions from "./StudentOptions/StudentOptions"
 

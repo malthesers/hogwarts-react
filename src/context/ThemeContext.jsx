@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ThemeContext } from '.';
+import { ThemeContext } from './';
 import PropTypes from 'prop-types';
 
 ThemeProvider.propTypes = {

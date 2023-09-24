@@ -1,4 +1,4 @@
-import { useStudents } from "../../context/StudentsContext";
+import { useStudents } from "../../context/";
 import { useTheme } from "../../context/"
 import StudentCounter from "./StudentCounter";
 

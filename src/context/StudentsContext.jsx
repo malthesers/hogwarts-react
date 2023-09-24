@@ -1,23 +1,13 @@
-import { createContext, useContext, useEffect, useReducer, useState } from "react"
+import { useEffect, useReducer, useState } from "react"
 import { useHacking } from "./HackingContext"
 import { useTheme } from "./"
 import getFormattedStudents from "../utils/reformatting"
 import getMyself from '../utils/injection'
 import PropTypes from 'prop-types';
+import { StudentsContext, OptionsContext } from "./"
 
 StudentsProvider.propTypes = {
   children: PropTypes.object
-}
-
-const StudentsContext = createContext()
-const OptionsContext = createContext()
-
-export function useStudents() {
-  return useContext(StudentsContext)
-}
-
-export function useOptions() {
-  return useContext(OptionsContext)
 }
 
 export function StudentsProvider({ children }) {

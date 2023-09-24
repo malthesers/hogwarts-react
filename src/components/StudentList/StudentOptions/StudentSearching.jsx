@@ -1,6 +1,6 @@
 import { useRef } from "react"
 import { useHacking } from "../../../context/HackingContext"
-import { useOptions } from "../../../context/StudentsContext"
+import { useOptions } from "../../../context/"
 import { useTheme } from "../../../context/"
 import IconWand from "../../icons/IconWand"
 

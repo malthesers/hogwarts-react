@@ -1,4 +1,4 @@
-import { useOptions } from "../../../context/StudentsContext"
+import { useOptions } from "../../../context/"
 import { useTheme } from "../../../context/"
 import IconChevron from "../../icons/IconChevron"
 import IconBadge from "../../icons/IconBadge"
