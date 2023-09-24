@@ -1,4 +1,5 @@
 import { StudentButtons } from './StudentButtons/StudentButtons';
+
 export default function StudentDetails({ student, showDetails }) {
   return (
     <div className={(showDetails ? 'max-h-96' : 'max-h-0') + ' relative text-xl overflow-hidden duration-[400ms] ease-linear'}>
