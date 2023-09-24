@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useReducer, useState } from "react"
 import { useHacking } from "./HackingContext"
-import { useTheme } from "./ThemeContext"
+import { useTheme } from "./"
 import getFormattedStudents from "../utils/reformatting"
 import getMyself from '../utils/injection'
 import PropTypes from 'prop-types';

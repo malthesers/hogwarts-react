@@ -1,7 +1,7 @@
 import { useRef } from "react"
 import { useHacking } from "../../../context/HackingContext"
 import { useOptions } from "../../../context/StudentsContext"
-import { useTheme } from "../../../context/ThemeContext"
+import { useTheme } from "../../../context/"
 import IconWand from "../../icons/IconWand"
 
 export default function StudentSearching() {

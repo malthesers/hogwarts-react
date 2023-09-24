@@ -1,5 +1,5 @@
 import { useOptions } from "../../../context/StudentsContext"
-import { useTheme } from "../../../context/ThemeContext"
+import { useTheme } from "../../../context/"
 import IconChevron from "../../icons/IconChevron"
 import IconBadge from "../../icons/IconBadge"
 import useToggle from "../../../hooks/useToggle"

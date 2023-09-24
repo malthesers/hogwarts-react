@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { useHacking } from './context/HackingContext'
-import { useTheme } from './context/ThemeContext'
+import { useTheme } from './context/'
 import MessagesContainer from './components/MessagesContainer/MessagesContainer'
 import OverviewPanel from './components/OverviewPanel/OverviewPanel'
 import HouseSelector from './components/HouseSelector/HouseSelector'
