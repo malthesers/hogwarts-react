@@ -1,14 +1,14 @@
-import { useState } from "react"
 import { useOptions } from "../../../context/StudentsContext"
 import { useTheme } from "../../../context/ThemeContext"
 import IconChevron from "../../icons/IconChevron"
 import IconHat from "../../icons/IconHat"
+import useToggle from "../../../hooks/useToggle"
 
 export default function StudentFilters() {
   const [options, setOptions] = useOptions()
   const { theme } = useTheme()
 
-  const [showSortingMethods, setShowSortingMethods] = useState(false)
+  const [showSortingMethods, toggleSortingMethods] = useToggle(false)
   const sortingMethods = {
     firstName: 'First name',
     lastName: 'Last name',
@@ -26,7 +26,7 @@ export default function StudentFilters() {
   return (
     <div className="grid gap-2 sm:gap-4 grid-cols-[auto_4rem] sm:grid-cols-[7rem_1fr]">
       <div className="cursor-pointer">
-        <p onClick={() => setShowSortingMethods(!showSortingMethods)} className={`bg-${theme}-dark border-${theme}-accent` + " sm:hidden border-2 p-2 flex justify-between items-center"}>
+        <p onClick={toggleSortingMethods} className={`bg-${theme}-dark border-${theme}-accent` + " sm:hidden border-2 p-2 flex justify-between items-center"}>
           <span>Sort by...</span>
           <IconChevron className={(showSortingMethods ? 'rotate-180' : 'rotate-0') + ` fill-${theme}-accent` + " h-4 duration-300"} />
         </p>
