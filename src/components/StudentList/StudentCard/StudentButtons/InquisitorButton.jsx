@@ -3,6 +3,11 @@ import { useStudents } from "../../../../context/StudentsContext"
 import { useMessages } from "../../../../context/MessagesContext"
 import { useHacking } from "../../../../context/HackingContext"
 import { useTheme } from "../../../../context/ThemeContext"
+import PropTypes from 'prop-types';
+
+InquisitorButton.propTypes = {
+  student: PropTypes.object
+}
 
 export default function InquisitorButton({ student }) {
   const { addMessage } = useMessages()

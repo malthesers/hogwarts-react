@@ -9,7 +9,6 @@ ExpelButton.propTypes = {
   student: PropTypes.object
 }
 
-
 export default function ExpelButton({ student }) {
   const { setIsCursed } = useHacking()
   const { addMessage } = useMessages()
