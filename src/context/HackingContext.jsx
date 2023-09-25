@@ -1,5 +1,5 @@
 import { HackingContext } from './'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import PropTypes from 'prop-types';
 
 HackingProvider.propTypes = {
@@ -9,6 +9,7 @@ HackingProvider.propTypes = {
 export function HackingProvider({ children }) {
   const [expulsionAttempts, setExpulsionAttempts] = useState(1)
   const [isHacked, setIsHacked] = useState(false)
+  const [isCursed, setIsCursed] = useState(false)
 
   function incrementExpulsionAttempts() {
     setExpulsionAttempts(expulsionAttempts => expulsionAttempts + 1)
@@ -16,6 +17,10 @@ export function HackingProvider({ children }) {
 
   function hackTheSystem() {
     setIsHacked(true)
+  }
+
+  function curseTheSystem() {
+    setIsCursed(true)
   }
 
   function curseHogwarts() {
@@ -31,8 +36,12 @@ export function HackingProvider({ children }) {
     }, 200);
   }
 
+  useEffect(() => {
+    if (isCursed) curseHogwarts()
+  }, [isCursed])
+
   return (
-    <HackingContext.Provider value={{isHacked, hackTheSystem, curseHogwarts, expulsionAttempts, incrementExpulsionAttempts}}>
+    <HackingContext.Provider value={{isHacked, hackTheSystem, isCursed, curseTheSystem, curseHogwarts, expulsionAttempts, incrementExpulsionAttempts}}>
       {children}
     </HackingContext.Provider>
   )
