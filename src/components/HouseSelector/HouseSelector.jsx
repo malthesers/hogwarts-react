@@ -36,6 +36,7 @@ export default function HouseSelector({ showHouseSelector, toggleHouseSelector }
   
   useEffect(() => {
     if (isHacked) {
+      toggleAnimating(true)
       mist.current.classList.add('appear')
     }
   }, [isHacked])
