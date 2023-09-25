@@ -10,7 +10,7 @@ ExpelButton.propTypes = {
 }
 
 export default function ExpelButton({ student }) {
-  const { setIsCursed } = useHacking()
+  const { curseHogwarts } = useHacking()
   const { addMessage } = useMessages()
   const { dispatch } = useStudents()
   const { theme } = useTheme()
@@ -32,7 +32,7 @@ export default function ExpelButton({ student }) {
         addMessage('expulsion3')
       } else {
         addMessage('curse')
-        setIsCursed(true)
+        curseHogwarts()
       }
     } else {
       howler.current.classList.add('howler')

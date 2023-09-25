@@ -6,7 +6,7 @@ import IconWand from '../../icons/IconWand'
 
 export default function StudentSearching() {
   const [options, setOptions] = useOptions()
-  const { setIsHacked } = useHacking()
+  const { hackTheSystem } = useHacking()
   const { theme } = useTheme()
   const input = useRef(null)
 
@@ -20,7 +20,7 @@ export default function StudentSearching() {
   function verifyHacking(e) {
     if (e.code === 'Enter' && e.target.value.toLowerCase() === 'imperio') {
       input.current.value = ''
-      setIsHacked(true)
+      hackTheSystem()
     }
   }
 
