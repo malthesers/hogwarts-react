@@ -48,7 +48,7 @@ export default function ExpelButton({ student }) {
       <img
         onAnimationEnd={() => dispatch({ type: 'expelled_student', student: student })}
         className='absolute w-20 rotate-[10deg] top-[-7%] right-[3%]'
-        src='src/assets/icons/howler.svg'
+        src='images/icons/howler.svg'
         alt='howler expulsion icon'
         ref={howler}
       />
