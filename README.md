@@ -1,8 +1,8 @@
 # <img src="/public/images/crests/hogwarts.svg" alt="hogwarts crest" width="30" align="center"> Hogwarts (React)
 
-Vue clone of [Hogwarts](https://github.com/malthesers/hogwarts).
+Assume the role of a Hogwarts system administrator [right here](https://malthesers.github.io/hogwarts-react).
 
-Assume the role of a Hogwarts system administrator [right here](https://malthesers.github.io/hogwarts-vue/).
+Or visit the [original](https://github.com/malthesers/hogwarts). Or the [Vue](https://github.com/malthesers/hogwarts-vue) clone.
 
 ## 📋 Instructions
 
