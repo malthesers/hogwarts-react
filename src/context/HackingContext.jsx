@@ -7,7 +7,12 @@ HackingProvider.propTypes = {
 }
 
 export function HackingProvider({ children }) {
+  const [expulsionAttempts, setExpulsionAttempts] = useState(1)
   const [isHacked, setIsHacked] = useState(false)
+
+  function incrementExpulsionAttempts() {
+    setExpulsionAttempts(expulsionAttempts => expulsionAttempts + 1)
+  }
 
   function hackTheSystem() {
     setIsHacked(true)
@@ -27,7 +32,7 @@ export function HackingProvider({ children }) {
   }
 
   return (
-    <HackingContext.Provider value={{isHacked, hackTheSystem, curseHogwarts}}>
+    <HackingContext.Provider value={{isHacked, hackTheSystem, curseHogwarts, expulsionAttempts, incrementExpulsionAttempts}}>
       {children}
     </HackingContext.Provider>
   )

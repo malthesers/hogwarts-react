@@ -1,8 +1,5 @@
+import { useMessages, useStudents, useHacking, useTheme } from '../../../../context/'
 import { useRef } from 'react'
-import { useMessages } from '../../../../context/'
-import { useStudents } from '../../../../context/'
-import { useHacking } from '../../../../context/'
-import { useTheme } from '../../../../context/'
 import PropTypes from 'prop-types';
 
 ExpelButton.propTypes = {
@@ -10,25 +7,25 @@ ExpelButton.propTypes = {
 }
 
 export default function ExpelButton({ student }) {
-  const { curseHogwarts } = useHacking()
+  const { curseHogwarts, expulsionAttempts, incrementExpulsionAttempts } = useHacking()
   const { addMessage } = useMessages()
   const { dispatch } = useStudents()
   const { theme } = useTheme()
   const button = useRef(null)
   const howler = useRef(null)
-  let expulsionAttempts = useRef(0)
 
   function expelStudent() {
     if (student.firstName === 'Malthe') {
-      button.current.classList.add('shake')
-      
-      expulsionAttempts.current++
+      button.current.classList.add('shake')      
   
-      if (expulsionAttempts.current === 1) {
+      if (expulsionAttempts === 1) {
+        incrementExpulsionAttempts()
         addMessage('expulsion1')
-      } else if (expulsionAttempts.current === 2) {
+      } else if (expulsionAttempts === 2) {
+        incrementExpulsionAttempts()
         addMessage('expulsion2')
-      } else if (expulsionAttempts.current === 3) {
+      } else if (expulsionAttempts === 3) {
+        incrementExpulsionAttempts()
         addMessage('expulsion3')
       } else {
         addMessage('curse')
