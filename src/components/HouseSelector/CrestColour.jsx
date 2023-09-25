@@ -13,6 +13,6 @@ export default function CrestColour({ house }) {
   }
 
   return (
-    <img id={`${house}-colour`} className={`hogwarts-crest-${colours[house]}`} src={`src/assets/hogwarts-parts/hogwarts-colours/hogwarts-${colours[house]}.svg`}/>
+    <img id={`${house}-colour`} className={`hogwarts-crest-${colours[house]}`} src={`images/hogwarts-parts/hogwarts-colours/hogwarts-${colours[house]}.svg`}/>
   )
 }

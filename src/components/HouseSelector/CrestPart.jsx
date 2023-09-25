@@ -17,7 +17,7 @@ export default function CrestPart({ house, part = '' }) {
       onMouseLeave={ () => unanimateHouse(house) }
       id={ `${house}${part}-part` }
       className={ house === 'hogwarts' ? 'hogwarts-crest-insignia' : `hogwarts-crest-${house}${part}` }
-      src={ house === 'hogwarts' ? 'src/assets/hogwarts-parts/hogwarts-insignia.svg' : `src/assets/hogwarts-parts/hogwarts-mascots/${house}${part}.svg` }
+      src={ house === 'hogwarts' ? 'images/hogwarts-parts/hogwarts-insignia.svg' : `images/hogwarts-parts/hogwarts-mascots/${house}${part}.svg` }
     />
   )
 }
