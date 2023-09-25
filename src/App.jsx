@@ -9,7 +9,7 @@ import useToggle from './hooks/useToggle'
 
 function App() {
   const [showHouseSelector, toggleHouseSelector] = useToggle(true)
-  const { isHacked } = useHacking()
+  const { isHacked, isCursed } = useHacking()
   const { theme } = useTheme()
 
   useEffect(() => {
@@ -17,6 +17,12 @@ function App() {
       toggleHouseSelector(true)
     }
   }, [isHacked])
+
+  useEffect(() => {
+    if (isCursed) {
+      console.log('yo')
+    }
+  }, [isCursed])
 
   return (
     <main className={`bg-${theme}-light text-${theme}-accent ` + 'font-merinda min-h-[100dvh] pb-20'}>
