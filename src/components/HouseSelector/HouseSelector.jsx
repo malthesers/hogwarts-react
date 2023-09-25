@@ -1,7 +1,8 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { animateHouse, unanimateHouse } from '../../utils/housing';
 import { useHacking } from '../../context/';
 import { useTheme } from '../../context/';
+import useToggle from '../../hooks/useToggle';
 import CrestColour from './CrestColour';
 import CrestPart from './CrestPart';
 import PropTypes from 'prop-types';
@@ -12,14 +13,14 @@ HouseSelector.propTypes = {
 }
 
 export default function HouseSelector({ showHouseSelector, toggleHouseSelector }) {
-  const [isAnimating, setIsAnimating] = useState(true)
+  const [animating, toggleAnimating] = useToggle(true)
   const { isHacked } = useHacking()
   const { theme } = useTheme()
   const mist = useRef(null)
   
   function animateCrest() {
     const housesOrder = ['gryffindor', 'slytherin', 'ravenclaw', 'hufflepuff', 'hogwarts', '']
-    setIsAnimating(true)
+    toggleAnimating(true)
 
     housesOrder.forEach((house, index) => {
       setTimeout(() => {
@@ -27,7 +28,7 @@ export default function HouseSelector({ showHouseSelector, toggleHouseSelector }
         if (index !== 5) animateHouse(house)                    // Skip animation of '' on last iteration
         if (index === 5) {                                      // Close house selector on last iteration
           toggleHouseSelector(false)
-          setIsAnimating(false)
+          toggleAnimating(false)
         }
       }, 400 * (index + 1))
     })
@@ -46,7 +47,7 @@ export default function HouseSelector({ showHouseSelector, toggleHouseSelector }
   return (
     <footer className={ (showHouseSelector ? 'h-full' : 'h-20') + ` bg-${theme}-dark` + ' fixed z-20 bottom-0 w-full grid place-content-center duration-500' }>
       <p className={ (showHouseSelector ? 'scale-100 mb-8' : 'scale-0 mb-0') + ' text-3xl sm:text-4xl text-center duration-200'}>Select a House</p>
-      <div onClick={toggleHouseSelector} className={ (isAnimating ? '[&>*]:pointer-events-none pointer-events-none ' : '[&>*]:cursor-pointer  cursor-pointer ') + (showHouseSelector ? 'w-[20rem] sm:w-[30rem]' : '[&>*]:pointer-events-none w-[6rem] mb-20') + ' hogwarts-crest-container grid mx-auto duration-500'}>
+      <div onClick={toggleHouseSelector} className={ (animating ? '[&>*]:pointer-events-none pointer-events-none ' : '[&>*]:cursor-pointer  cursor-pointer ') + (showHouseSelector ? 'w-[20rem] sm:w-[30rem]' : '[&>*]:pointer-events-none w-[6rem] mb-20') + ' hogwarts-crest-container grid mx-auto duration-500'}>
         <img className='hogwarts-crest-frame' src='src/assets/hogwarts-parts/hogwarts-frame.svg'/>
         <CrestColour house='gryffindor'/>
         <CrestColour house='slytherin'/>
