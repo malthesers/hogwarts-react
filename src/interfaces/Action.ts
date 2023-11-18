@@ -4,6 +4,7 @@ export type ActionType = 'initialised' | 'injected_self' | 'toggled_prefect' | '
 
 export interface Action {
   type: ActionType,
+  value?: boolean,
   student?: Student,
   students?: Student[]
 }
