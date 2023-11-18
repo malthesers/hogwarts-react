@@ -1,10 +1,8 @@
-import { House } from "./House";
-
 export interface Student {
     fullName: string,
     firstName: string,
-    middleName: string | undefined,
-    nickName: string | undefined,
+    middleName?: string | undefined,
+    nickName?: string | undefined,
     lastName: string,
     gender: 'Male' | 'Female',
     house: StudentHouse,
@@ -15,6 +13,12 @@ export interface Student {
     expelled: boolean,
     inquisitor: boolean,
     id?: number
+}
+
+export interface UnformattedStudent {
+    fullname: string,
+    gender: string,
+    house: string
 }
 
 export type StudentHouse = 'Gryffindor' | 'Slytherin' | 'Hufflepuff' | 'Ravenclaw'
