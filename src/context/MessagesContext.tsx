@@ -1,16 +1,17 @@
-import { MessagesContext } from './';
-import { useState } from 'react';
+import { MessagesContext } from '.';
+import { ReactNode, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid'
 import PropTypes from 'prop-types';
+import { Message, Type } from '../interfaces/Message';
 
 MessagesProvider.propTypes = {
   children: PropTypes.object
 }
 
-export function MessagesProvider({ children }) {
-  const [messages, setMessages] = useState([])
+export function MessagesProvider({ children }: { children: ReactNode }) {
+  const [messages, setMessages] = useState<Message[]>([])
 
-  function addMessage(type, query = '') {
+  function addMessage(type: Type, query = ''): void {
     setMessages([...messages, {
       title: titles[type],
       description: `${query} ${descriptions[type]}`,
@@ -18,7 +19,7 @@ export function MessagesProvider({ children }) {
     }])
   }
 
-  function removeMessage(id) {
+  function removeMessage(id: number): void {
     setMessages(messages.filter(message => message.id !== id))
   }
 
