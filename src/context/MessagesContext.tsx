@@ -19,7 +19,7 @@ export function MessagesProvider({ children }: { children: ReactNode }) {
     }])
   }
 
-  function removeMessage(id: number): void {
+  function removeMessage(id: string): void {
     setMessages(messages.filter(message => message.id !== id))
   }
 
