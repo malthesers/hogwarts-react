@@ -1,17 +1,20 @@
-import { StudentsContext, OptionsContext, useHacking, useTheme } from './'
-import { useEffect, useReducer, useState } from 'react'
+import { StudentsContext, OptionsContext, useHacking, useTheme } from '.'
+import { ReactNode, useEffect, useReducer, useState } from 'react'
 import getFormattedStudents from '../utils/reformatting'
 import getMyself from '../utils/injection'
 import PropTypes from 'prop-types';
+import { Student } from '../interfaces/Student';
+import { Action } from '../interfaces/Action';
+import { Options } from '../interfaces/Options';
 
 StudentsProvider.propTypes = {
   children: PropTypes.object
 }
 
-export function StudentsProvider({ children }) {
+export function StudentsProvider({ children }: { children: ReactNode }) {
   const [students, dispatch] = useReducer(studentsReducer, initialStudents)
-  const [displayedStudents, setDisplayedStudents] = useState([])
-  const [options, setOptions] = useState({
+  const [displayedStudents, setDisplayedStudents] = useState<Student[]>([])
+  const [options, setOptions] = useState<Options>({
     search: '',
     filter: 'all',
     sorting: 'firstName',
@@ -48,7 +51,7 @@ export function StudentsProvider({ children }) {
   // Calculate displayed students
   useEffect(() => {
     // Filter by house
-    let filteredStudents = [ ...students ].filter(student => student.house.toLowerCase() === theme || 'hogwarts' === theme)
+    let filteredStudents:Student[] = [ ...students ].filter(student => student.house.toLowerCase() === theme || 'hogwarts' === theme)
 
     // Include searching
     filteredStudents = filteredStudents.filter(student => student.fullName.toLowerCase().includes(options.search.toLowerCase()) || options.search === '')
@@ -57,7 +60,7 @@ export function StudentsProvider({ children }) {
     if (options.filter === 'current') {
       filteredStudents = filteredStudents.filter(student => !student.expelled)
     } else {
-      filteredStudents = filteredStudents.filter(student => student[options.filter] || options.filter === 'all')
+      filteredStudents = filteredStudents.filter(student => student[options.filter as keyof Student] || options.filter === 'all')
     }
 
     // Include sorting
@@ -84,9 +87,9 @@ export function StudentsProvider({ children }) {
   )
 }
 
-const initialStudents = []
+const initialStudents:Student[] = []
 
-function studentsReducer(students, action) {
+function studentsReducer(students: Student[], action: Action) {
   switch (action.type) {
     case 'initialised': {
       return [...action.students]
