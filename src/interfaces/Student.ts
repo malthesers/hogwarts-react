@@ -14,6 +14,7 @@ export interface Student {
     prefect: boolean,
     expelled: boolean,
     inquisitor: boolean,
+    id: number
 }
 
 export type BloodStatus = 'Pure-blood' | 'Muggle-born' | 'Half-blood' | 'Squib'
