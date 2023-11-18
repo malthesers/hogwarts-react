@@ -1,5 +1,7 @@
+import { Student, StudentHouse } from "../interfaces/Student";
+
 export default function getMyself() {
-  const student = {
+  const student:Student = {
     fullName: 'Malthe Kusk Lauritsen',
     firstName: 'Malthe',
     middleName: 'Kusk',
@@ -18,6 +20,8 @@ export default function getMyself() {
   return student;
 }
 
-function getRandomHouse() {
-  return ['Gryffindor', 'Hufflepuff', 'Ravenclaw', 'Slytherin'][Math.floor(Math.random() * 4)];
+function getRandomHouse(): StudentHouse {
+  const houses:StudentHouse[] = ['Gryffindor', 'Hufflepuff', 'Ravenclaw', 'Slytherin']
+
+  return houses[Math.floor(Math.random() * 4)];
 }
