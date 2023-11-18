@@ -7,7 +7,7 @@ import { MessagesProvider } from './context/MessagesContext.jsx'
 import { HackingProvider } from './context/HackingContext.jsx'
 import { ThemeProvider } from './context/ThemeContext.jsx'
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <ThemeProvider>
       <HackingProvider>
