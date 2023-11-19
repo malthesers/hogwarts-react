@@ -1,24 +1,24 @@
 import { useRef } from 'react'
-import { useHacking } from '../../../context/'
-import { useOptions } from '../../../context/'
-import { useTheme } from '../../../context/'
+import { useHacking } from '../../../context'
+import { useOptions } from '../../../context'
+import { useTheme } from '../../../context'
 import IconWand from '../../icons/IconWand'
 
 export default function StudentSearching() {
   const { options, setOptions } = useOptions()
   const { hackTheSystem } = useHacking()
   const { theme } = useTheme()
-  const input = useRef(null)
+  const input = useRef<HTMLInputElement>(null)
 
-  function updateSearch(value) {
+  function updateSearch(value: string) {
     setOptions({
       ...options,
-      search: value.target.value
+      search: value
     })
   }
 
-  function verifyHacking(e) {
-    if (e.code === 'Enter' && e.target.value.toLowerCase() === 'imperio') {
+  function verifyHacking(e: React.KeyboardEvent<HTMLInputElement>) {
+    if (input.current && e.code === 'Enter' && e.currentTarget.value.toLowerCase() === 'imperio') {
       input.current.value = ''
       hackTheSystem()
     }
@@ -29,7 +29,7 @@ export default function StudentSearching() {
       <input
         ref={input}
         onKeyDown={(e) => verifyHacking(e)}
-        onChange={(e) => updateSearch(e)}
+        onChange={(e) => updateSearch(e.target.value)}
         type='text'
         placeholder='Search...'
         className={`bg-${theme}-dark border-${theme}-accent placeholder-${theme}-accent` + ' w-full border-2 p-2 outline-none placeholder:opacity-60'}
