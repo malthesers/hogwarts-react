@@ -1,20 +1,20 @@
+import { Student } from '../../../../interfaces/Student'
+import { useStudents } from '../../../../context'
+import { useMessages } from '../../../../context'
+import { useHacking } from '../../../../context'
+import { useTheme } from '../../../../context'
 import { useRef } from 'react'
-import { useStudents } from '../../../../context/'
-import { useMessages } from '../../../../context/'
-import { useHacking } from '../../../../context/'
-import { useTheme } from '../../../../context/'
-import PropTypes from 'prop-types';
 
-InquisitorButton.propTypes = {
-  student: PropTypes.object
+interface InquisitorButtonProps {
+  student: Student
 }
 
-export default function InquisitorButton({ student }) {
+export default function InquisitorButton({ student }: InquisitorButtonProps) {
   const { addMessage } = useMessages()
   const { dispatch } = useStudents()
   const { isHacked } = useHacking()
   const { theme } = useTheme()
-  const button = useRef(null)
+  const button = useRef<HTMLButtonElement>(null)
 
   function toggleInquisitor() {
     if (student.inquisitor) {
@@ -29,7 +29,7 @@ export default function InquisitorButton({ student }) {
           }, 2000)
         }
       } else {
-        button.current.classList.add('shake')
+        button.current?.classList.add('shake')
         addMessage('inquisitor', student.firstName)
       }
     }
@@ -40,7 +40,7 @@ export default function InquisitorButton({ student }) {
       ref={button}
       onClick={toggleInquisitor}
       disabled={student.expelled}
-      onAnimationEnd={() => button.current.classList.remove('shake')}
+      onAnimationEnd={() => button.current?.classList.remove('shake')}
       className={`bg-${theme}-accent text-${theme}-dark border-${theme}-dark` + ' border-2 p-2 flex justify-between'}
     >
       <p>Inquisitor</p>

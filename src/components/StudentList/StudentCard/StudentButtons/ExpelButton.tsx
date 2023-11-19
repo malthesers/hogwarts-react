@@ -15,8 +15,8 @@ export default function ExpelButton({ student }: ExpelButtonProps) {
   const howler = useRef<HTMLImageElement>(null)
 
   function expelStudent() {
-    if (button.current && student.firstName === 'Malthe') {
-      button.current.classList.add('shake')      
+    if (student.firstName === 'Malthe') {
+      button.current?.classList.add('shake')      
   
       if (expulsionAttempts === 1) {
         incrementExpulsionAttempts()
@@ -31,8 +31,8 @@ export default function ExpelButton({ student }: ExpelButtonProps) {
         addMessage('curse')
         curseTheSystem()
       }
-    } else if (howler.current) {
-      howler.current.classList.add('howler')
+    } else {
+      howler.current?.classList.add('howler')
     }
   }
 
