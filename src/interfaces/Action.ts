@@ -36,5 +36,4 @@ export interface ExpelledStudentAction {
 
 export interface RandomisedBloodAction {
   type: 'randomised_blood',
-  student: Student
 }

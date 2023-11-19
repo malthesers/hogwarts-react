@@ -5,7 +5,7 @@ import { useTheme } from '../../../context/'
 import IconWand from '../../icons/IconWand'
 
 export default function StudentSearching() {
-  const [options, setOptions] = useOptions()
+  const { options, setOptions } = useOptions()
   const { hackTheSystem } = useHacking()
   const { theme } = useTheme()
   const input = useRef(null)

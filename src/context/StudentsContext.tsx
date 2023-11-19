@@ -87,7 +87,7 @@ export function StudentsProvider({ children }: { children: ReactNode }) {
 
   return (
     <StudentsContext.Provider value={{students, dispatch, displayedStudents}}>
-      <OptionsContext.Provider value={[options, setOptions]}>
+      <OptionsContext.Provider value={{options, setOptions}}>
         {children}
       </OptionsContext.Provider>
     </StudentsContext.Provider>

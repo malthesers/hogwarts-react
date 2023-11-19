@@ -6,7 +6,7 @@ import useToggle from '../../../hooks/useToggle'
 
 export default function StudentFilters() {
   const [showSortingMethods, toggleSortingMethods] = useToggle(false)
-  const [options, setOptions] = useOptions()
+  const { options, setOptions } = useOptions()
   const { theme } = useTheme()
 
   const sortingMethods = {
