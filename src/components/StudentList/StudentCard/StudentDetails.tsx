@@ -1,12 +1,12 @@
 import { StudentButtons } from './StudentButtons/StudentButtons';
-import PropTypes from 'prop-types';
+import { Student } from '../../../interfaces/Student';
 
-StudentDetails.propTypes = {
-  student: PropTypes.object,
-  showDetails: PropTypes.bool
+interface StudentDetailsProps {
+  student: Student,
+  showDetails: boolean
 }
 
-export default function StudentDetails({ student, showDetails }) {
+export default function StudentDetails({ student, showDetails }: StudentDetailsProps) {
   return (
     <div className={(showDetails ? 'max-h-96' : 'max-h-0') + ' relative text-xl overflow-hidden duration-[400ms] ease-linear'}>
       <div className='mt-2 md:flex md:justify-between'>
