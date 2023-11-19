@@ -1,13 +1,13 @@
-import { useTheme } from '../../context/'
 import { animateHouse, unanimateHouse } from '../../utils/housing'
-import PropTypes from 'prop-types';
+import { House } from '../../interfaces/House';
+import { useTheme } from '../../context'
 
-CrestPart.propTypes = {
-  house: PropTypes.string,
-  part: PropTypes.string
+interface CrestPartProps {
+  house: House,
+  part?: string
 }
 
-export default function CrestPart({ house, part = '' }) {
+export default function CrestPart({ house, part = '' }: CrestPartProps) {
   const { updateTheme } = useTheme()
 
   return (
