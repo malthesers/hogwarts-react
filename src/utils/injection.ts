@@ -7,7 +7,7 @@ export default function getMyself() {
     middleName: 'Kusk',
     nickName: undefined,
     lastName: 'Lauritsen',
-    gender: 'Male',
+    gender: 'Boy',
     house: getRandomHouse(),
     photo: 'default.png',
     bloodStatus: 'Half-breed',
