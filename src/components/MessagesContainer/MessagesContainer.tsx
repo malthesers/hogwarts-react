@@ -1,4 +1,4 @@
-import { useMessages } from '../../context/'
+import { useMessages } from '../../context'
 import MessagePopup from './MessagePopup'
 
 export default function MessagesContainer() {

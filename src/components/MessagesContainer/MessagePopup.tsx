@@ -1,12 +1,12 @@
-import { useMessages } from '../../context/'
-import { useTheme } from '../../context/'
-import PropTypes from 'prop-types';
+import { useMessages } from '../../context'
+import { useTheme } from '../../context'
+import { Message } from '../../interfaces/Message'
 
-MessagePopup.propTypes = {
-  message: PropTypes.object
+interface MessagePopupProps {
+  message: Message
 }
 
-export default function MessagePopup({ message }) {
+export default function MessagePopup({ message }: MessagePopupProps) {
   const { removeMessage } = useMessages()
   const { theme } = useTheme()
 
