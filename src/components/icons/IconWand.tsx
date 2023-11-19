@@ -1,10 +1,8 @@
-import PropTypes from 'prop-types';
-
-IconWand.propTypes = {
-  className: PropTypes.string
+interface IconWandProps {
+  className: string
 }
 
-export default function IconWand({ className }) {
+export default function IconWand({ className }: IconWandProps) {
   return (
     <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 46.73 54.04' className={className}>
       <g id='Layer_2' data-name='Layer 2'>
