@@ -1,18 +1,18 @@
+import { Student } from '../../../../interfaces/Student'
+import { useStudents } from '../../../../context'
+import { useMessages } from '../../../../context'
+import { useTheme } from '../../../../context'
 import { useRef } from 'react'
-import { useStudents } from '../../../../context/'
-import { useTheme } from '../../../../context/'
-import { useMessages } from '../../../../context/'
-import PropTypes from 'prop-types';
 
-PrefectButton.propTypes = {
-  student: PropTypes.object
+interface PrefectButtonProps {
+  student: Student
 }
 
-export default function PrefectButton({ student }) {
+export default function PrefectButton({ student }: PrefectButtonProps) {
   const { students, dispatch } = useStudents()
   const { addMessage } = useMessages()
   const { theme } = useTheme()
-  const button = useRef(null)
+  const button = useRef<HTMLButtonElement>(null)
 
   const housePrefects = students.filter(otherStudent => otherStudent.prefect && otherStudent.house === student.house)
 
@@ -20,10 +20,10 @@ export default function PrefectButton({ student }) {
     if (student.prefect) {
       dispatch({ type: 'toggled_prefect', student: student })
     } else if (housePrefects.length === 2) {
-      button.current.classList.add('shake')
+      button.current?.classList.add('shake')
       addMessage('house', student.house)
     } else if (housePrefects.some(prefect => prefect.gender === student.gender)) {
-      button.current.classList.add('shake')
+      button.current?.classList.add('shake')
       addMessage('gender', student.house)
     } else {
       dispatch({ type: 'toggled_prefect', student: student })
@@ -35,7 +35,7 @@ export default function PrefectButton({ student }) {
       ref={button}
       onClick={togglePrefect}
       disabled={student.expelled}
-      onAnimationEnd={() => button.current.classList.remove('shake')}
+      onAnimationEnd={() => button.current?.classList.remove('shake')}
       className={`bg-${theme}-accent text-${theme}-dark border-${theme}-dark` + ' border-2 p-2 flex justify-between'}
     >
       <p>Prefect</p>
