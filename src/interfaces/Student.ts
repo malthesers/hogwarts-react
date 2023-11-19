@@ -3,8 +3,8 @@ export interface Student {
     firstName: string,
     middleName?: string | undefined,
     nickName?: string | undefined,
-    lastName: string,
-    gender: 'Male' | 'Female',
+    lastName: string | undefined,
+    gender: Gender,
     house: StudentHouse,
     photo: `${string}.png`,
     bloodStatus: BloodStatus,
@@ -20,6 +20,8 @@ export interface UnformattedStudent {
     gender: string,
     house: string
 }
+
+export type Gender = 'Boy' | 'Girl'
 
 export type StudentHouse = 'Gryffindor' | 'Slytherin' | 'Hufflepuff' | 'Ravenclaw'
 
