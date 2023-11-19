@@ -1,10 +1,8 @@
-import PropTypes from 'prop-types'
-
-IconChevron.propTypes = {
-  className: PropTypes.string
+interface IconChevronProps {
+  className: string
 }
 
-export default function IconChevron({ className }) {
+export default function IconChevron({ className }: IconChevronProps) {
   return (
     <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 178.62 116.01' className={className}>
       <g id='Layer_2' data-name='Layer 2'>
