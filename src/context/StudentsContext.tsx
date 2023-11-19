@@ -3,7 +3,7 @@ import { ReactNode, useEffect, useReducer, useState } from 'react'
 import getFormattedStudents from '../utils/reformatting'
 import getMyself from '../utils/injection'
 import PropTypes from 'prop-types';
-import { Student } from '../interfaces/Student';
+import { BloodStatus, Student } from '../interfaces/Student';
 import { Options } from '../interfaces/Options';
 import { Action } from '../interfaces/Action';
 
@@ -12,7 +12,7 @@ StudentsProvider.propTypes = {
 }
 
 export function StudentsProvider({ children }: { children: ReactNode }) {
-  const [students, dispatch] = useReducer(studentsReducer, initialStudents)
+  const [students, dispatch] = useReducer<React.Reducer<Student[], Action>>(studentsReducer, initialStudents)
   const [displayedStudents, setDisplayedStudents] = useState<Student[]>([])
   const [options, setOptions] = useState<Options>({
     search: '',
@@ -51,7 +51,7 @@ export function StudentsProvider({ children }: { children: ReactNode }) {
   // Calculate displayed students
   useEffect(() => {
     // Filter by house
-    let filteredStudents:Student[] = [ ...students ].filter(student => student.house.toLowerCase() === theme || 'hogwarts' === theme)
+    let filteredStudents:Student[] = ([ ...students ] as Student[]).filter(student => student.house.toLowerCase() === theme || 'hogwarts' === theme)
 
     // Include searching
     filteredStudents = filteredStudents.filter(student => student.fullName.toLowerCase().includes(options.search.toLowerCase()) || options.search === '')
@@ -96,7 +96,7 @@ export function StudentsProvider({ children }: { children: ReactNode }) {
 
 const initialStudents:Student[] = []
 
-function studentsReducer(students: Student[], action:Action) {
+function studentsReducer(students: Student[], action:Action): Student[] {
   switch (action.type) {
     case 'initialised': {
       return [...action.students]
@@ -122,7 +122,9 @@ function studentsReducer(students: Student[], action:Action) {
     case 'randomised_blood': {
       return students.map(student => {
         if (student.bloodStatus === 'Pure-blood') {
-          return {...student, bloodStatus: ['Muggle-born', 'Half-blood', 'Squib'][Math.floor(Math.random() * 3)]}
+          const bloodStatuses:BloodStatus[] = ['Muggle-born', 'Half-blood', 'Squib']
+
+          return {...student, bloodStatus: bloodStatuses[Math.floor(Math.random() * 3)]}
         } else {
           return {...student, bloodStatus: 'Pure-blood'}
         }
