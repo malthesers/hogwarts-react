@@ -1,5 +1,5 @@
-import StudentFilters from './StudentFilters';
-import StudentSearching from './StudentSearching';
+import StudentSearching from './StudentSearching'
+import StudentFilters from './StudentFilters'
 import StudentSorting from './StudentSorting'
 
 export default function StudentOptions() {

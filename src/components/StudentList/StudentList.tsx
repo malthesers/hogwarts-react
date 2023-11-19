@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
-import { useHacking, useStudents } from '../../context/'
-import StudentCard from './StudentCard/StudentCard'
+import { useHacking, useStudents } from '../../context'
 import StudentOptions from './StudentOptions/StudentOptions'
+import StudentCard from './StudentCard/StudentCard'
 
 export default function StudentList () {
   const { displayedStudents } = useStudents()
