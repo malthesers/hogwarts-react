@@ -1,10 +1,8 @@
-import PropTypes from 'prop-types';
-
-IconHat.propTypes = {
-  className: PropTypes.string
+interface IconHatProps {
+  className: string
 }
 
-export default function IconHat({ className }) {
+export default function IconHat({ className }: IconHatProps) {
   return (
     <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 53.01 46.9' className={className}>
       <g id='Layer_2' data-name='Layer 2'>
