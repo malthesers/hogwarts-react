@@ -9,7 +9,7 @@ interface FamilyNameList {
   pure: string[]
 }
 
-export default function getFormattedStudents() {
+export default function getFormattedStudents():Student[] {
   let students:Student[] = [];
   let index = 1;
 

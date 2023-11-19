@@ -1,10 +1,40 @@
 import { Student } from "./Student"
 
-export type ActionType = 'initialised' | 'injected_self' | 'toggled_prefect' | 'toggled_inquisitor' | 'expelled_student' | 'randomised_blood'
+export type Action =
+  | InitialisedAction
+  | InjectedSelfAction
+  | ToggledPrefectAction
+  | ToggledInquisitorAction
+  | ExpelledStudentAction
+  | RandomisedBloodAction
 
-export interface Action {
-  type: ActionType,
-  value?: boolean,
-  student?: Student,
-  students?: Student[]
+export interface InitialisedAction {
+  type: 'initialised',
+  students: Student[],
+}
+
+export interface InjectedSelfAction {
+  type: 'injected_self',
+  student: Student
+}
+
+export interface ToggledPrefectAction {
+  type: 'toggled_prefect',
+  student: Student
+}
+
+export interface ToggledInquisitorAction {
+  type: 'toggled_inquisitor',
+  student: Student,
+  value: boolean
+}
+
+export interface ExpelledStudentAction {
+  type: 'expelled_student',
+  student: Student
+}
+
+export interface RandomisedBloodAction {
+  type: 'randomised_blood',
+  student: Student
 }

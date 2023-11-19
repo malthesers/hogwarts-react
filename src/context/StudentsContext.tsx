@@ -4,8 +4,8 @@ import getFormattedStudents from '../utils/reformatting'
 import getMyself from '../utils/injection'
 import PropTypes from 'prop-types';
 import { Student } from '../interfaces/Student';
-import { Action } from '../interfaces/Action';
 import { Options } from '../interfaces/Options';
+import { Action } from '../interfaces/Action';
 
 StudentsProvider.propTypes = {
   children: PropTypes.object
@@ -26,7 +26,7 @@ export function StudentsProvider({ children }: { children: ReactNode }) {
 
   // Load students on mount
   useEffect(() => {
-    dispatch({ type: 'initialised', students: getFormattedStudents() })
+    dispatch({ type: 'initialised', students: getFormattedStudents() as Student[] })
   }, [])
 
   // Apply modifications upon hacking
@@ -65,7 +65,14 @@ export function StudentsProvider({ children }: { children: ReactNode }) {
 
     // Include sorting
     filteredStudents.sort((a, b) => {
-      return a[options.sorting] > b[options.sorting] ? (1 * options.sortingOrder) : (-1 * options.sortingOrder)
+      const aValue:(string | undefined) = a[options.sorting]
+      const bValue:(string | undefined) = b[options.sorting]
+
+      if (aValue !== undefined && bValue !== undefined) {
+        return aValue > bValue ? (1 * options.sortingOrder) : (-1 * options.sortingOrder)
+      } else {
+        return 1 * options.sortingOrder
+      }
     })
 
     // If hacked, add me to start of array
@@ -89,7 +96,7 @@ export function StudentsProvider({ children }: { children: ReactNode }) {
 
 const initialStudents:Student[] = []
 
-function studentsReducer(students: Student[], action: Action) {
+function studentsReducer(students: Student[], action:Action) {
   switch (action.type) {
     case 'initialised': {
       return [...action.students]
