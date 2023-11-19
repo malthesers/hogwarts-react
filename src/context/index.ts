@@ -1,9 +1,9 @@
 import { Dispatch, SetStateAction, createContext, useContext } from 'react';
 import { Message, Type } from '../interfaces/Message';
-import { House } from '../interfaces/House';
+import { Options } from '../interfaces/Options';
 import { Student } from '../interfaces/Student';
 import { Action } from '../interfaces/Action';
-import { Options } from '../interfaces/Options';
+import { House } from '../interfaces/House';
 
 export const ThemeContext = createContext<{
   theme: House,

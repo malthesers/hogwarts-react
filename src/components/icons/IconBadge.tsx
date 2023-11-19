@@ -1,10 +1,8 @@
-import PropTypes from 'prop-types';
-
-IconBadge.propTypes = {
-  className: PropTypes.string
+interface IconBadgeProps {
+  className: string
 }
 
-export default function IconBadge({ className }) {
+export default function IconBadge({ className }: IconBadgeProps) {
   return (
     <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 137.5 159.73' className={className}>
       <g id='Layer_2' data-name='Layer 2'>
