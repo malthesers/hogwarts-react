@@ -1,12 +1,7 @@
-import { MessagesContext } from '.';
-import { ReactNode, useState } from 'react';
-import { v4 as uuidv4 } from 'uuid'
-import PropTypes from 'prop-types';
 import { Message, Type } from '../interfaces/Message';
-
-MessagesProvider.propTypes = {
-  children: PropTypes.object
-}
+import { ReactNode, useState } from 'react';
+import { MessagesContext } from '.';
+import { v4 as uuidv4 } from 'uuid'
 
 export function MessagesProvider({ children }: { children: ReactNode }) {
   const [messages, setMessages] = useState<Message[]>([])

@@ -1,10 +1,5 @@
 import { HackingContext } from '.'
 import { ReactNode, useEffect, useState } from 'react'
-import PropTypes from 'prop-types';
-
-HackingProvider.propTypes = {
-  children: PropTypes.object
-}
 
 export function HackingProvider({ children }: { children: ReactNode }) {
   const [expulsionAttempts, setExpulsionAttempts] = useState<number>(1)

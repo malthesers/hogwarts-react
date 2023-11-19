@@ -1,15 +1,10 @@
 import { StudentsContext, OptionsContext, useHacking, useTheme } from '.'
 import { ReactNode, useEffect, useReducer, useState } from 'react'
-import getFormattedStudents from '../utils/reformatting'
-import getMyself from '../utils/injection'
-import PropTypes from 'prop-types';
 import { BloodStatus, Student } from '../interfaces/Student';
 import { Options } from '../interfaces/Options';
 import { Action } from '../interfaces/Action';
-
-StudentsProvider.propTypes = {
-  children: PropTypes.object
-}
+import getFormattedStudents from '../utils/reformatting'
+import getMyself from '../utils/injection'
 
 export function StudentsProvider({ children }: { children: ReactNode }) {
   const [students, dispatch] = useReducer<React.Reducer<Student[], Action>>(studentsReducer, initialStudents)

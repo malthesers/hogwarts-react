@@ -1,11 +1,6 @@
-import { ThemeContext } from '.';
 import { ReactNode, useState } from 'react';
-import PropTypes from 'prop-types';
 import { House } from '../interfaces/House';
-
-ThemeProvider.propTypes = {
-  children: PropTypes.object
-}
+import { ThemeContext } from '.';
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setTheme] = useState<House>('hogwarts');
