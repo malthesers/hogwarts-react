@@ -10,7 +10,7 @@ interface FamilyNameList {
 }
 
 export default function getFormattedStudents():Student[] {
-  let students:Student[] = [];
+  const students:Student[] = [];
   let index = 1;
 
   studentsData.forEach((student) => {
@@ -51,7 +51,7 @@ function getFirstName(unformattedStudent:UnformattedStudent): string {
 }
 
 function getMiddleName(unformattedStudent:UnformattedStudent):(string | undefined) {
-  let fullName:string[] = capitalise(unformattedStudent.fullname).split(' ');
+  const fullName:string[] = capitalise(unformattedStudent.fullname).split(' ');
   let middleName:(string | undefined) = fullName.join(' ');
 
   if (fullName.length > 2 && !middleName.includes('"')) {
@@ -64,7 +64,7 @@ function getMiddleName(unformattedStudent:UnformattedStudent):(string | undefine
 }
 
 function getNickName(unformattedStudent:UnformattedStudent):(string | undefined) {
-  let fullName:string[] = capitalise(unformattedStudent.fullname).split(' ');
+  const fullName:string[] = capitalise(unformattedStudent.fullname).split(' ');
   let nickName:(string | undefined) = fullName.join(' ');
 
   if (fullName.length > 2 && nickName.includes('"')) {
@@ -77,8 +77,8 @@ function getNickName(unformattedStudent:UnformattedStudent):(string | undefined)
 }
 
 function getLastName(unformattedStudent:UnformattedStudent):(string | undefined) {
-  let fullName:string[] = capitalise(unformattedStudent.fullname).split(' ');
-  let lastName:(string | undefined) = fullName.length > 1 ? fullName[fullName.length - 1] : undefined;
+  const fullName:string[] = capitalise(unformattedStudent.fullname).split(' ');
+  const lastName:(string | undefined) = fullName.length > 1 ? fullName[fullName.length - 1] : undefined;
 
   return lastName;
 }
@@ -93,7 +93,7 @@ function getHouse(unformattedStudent:UnformattedStudent):StudentHouse {
 
 function getPhoto(unformattedStudent: UnformattedStudent, lastNameList:string[]):`${string}.png` {
   // Get names
-  let fullName:string = unformattedStudent.fullname.trim().toLowerCase();
+  const fullName:string = unformattedStudent.fullname.trim().toLowerCase();
   let lastName:string = fullName.substring(fullName.lastIndexOf(' ') + 1);
   let firstName:string = fullName.substring(0, fullName.indexOf(' '));
 
@@ -134,7 +134,7 @@ function getCaptaincy(name:string):boolean {
 }
 
 function getLastNameList(students:UnformattedStudent[]):string[] {
-  let lastNameList:string[] = [];
+  const lastNameList:string[] = [];
 
   students.forEach((student) => {
     let lastName = student.fullname.trim().toLowerCase();

@@ -1,6 +1,6 @@
 'use strict';
 
-import { House } from "../interfaces/House";
+import { House } from '../interfaces/House';
 
 const houses:House[] = ['gryffindor', 'slytherin', 'hufflepuff', 'ravenclaw'];
 

@@ -1,4 +1,4 @@
-import { House } from "../../interfaces/House"
+import { House } from '../../interfaces/House'
 
 interface StudentCounterProps {
   src: House | 'expelled',

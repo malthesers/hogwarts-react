@@ -1,4 +1,4 @@
-import { Student, StudentHouse } from "../interfaces/Student";
+import { Student, StudentHouse } from '../interfaces/Student';
 
 export default function getMyself() {
   const student:Student = {

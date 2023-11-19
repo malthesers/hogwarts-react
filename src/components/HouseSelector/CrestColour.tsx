@@ -1,4 +1,4 @@
-import { House } from "../../interfaces/House"
+import { House } from '../../interfaces/House'
 
 interface CrestColourProps {
   house: House
