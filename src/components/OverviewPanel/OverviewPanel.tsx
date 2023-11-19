@@ -1,5 +1,5 @@
-import { useStudents } from '../../context/';
-import { useTheme } from '../../context/'
+import { useStudents } from '../../context';
+import { useTheme } from '../../context'
 import StudentCounter from './StudentCounter';
 
 export default function OverviewPanel() {

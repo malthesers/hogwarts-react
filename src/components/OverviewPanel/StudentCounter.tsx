@@ -1,12 +1,12 @@
-import PropTypes from 'prop-types';
+import { House } from "../../interfaces/House"
 
-StudentCounter.propTypes = {
-  src: PropTypes.string,
-  type: PropTypes.string,
-  count: PropTypes.number,
+interface StudentCounterProps {
+  src: House | 'expelled',
+  type?: string,
+  count: number
 }
 
-export default function StudentCounter({ src, type = 'crests', count }) {
+export default function StudentCounter({ src, type = 'crests', count }: StudentCounterProps) {
   return (
     <span className='w-8 h-8 inline-grid place-content-center'>
       <img src={`./images/${type}/${src}.svg`} className='w-auto h-8 grid-center opacity-50'/>
