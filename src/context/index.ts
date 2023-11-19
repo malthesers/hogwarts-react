@@ -68,7 +68,7 @@ export function useHacking() {
 
 export const MessagesContext = createContext<{
   messages: Message[],
-  addMessage: (type: Type, query: string) => void,
+  addMessage: (type: Type, query?: string) => void,
   removeMessage: (id: string) => void
 }>({
   messages: [],

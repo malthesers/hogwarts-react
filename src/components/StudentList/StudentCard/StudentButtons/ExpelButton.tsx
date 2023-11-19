@@ -1,21 +1,21 @@
-import { useMessages, useStudents, useHacking, useTheme } from '../../../../context/'
+import { useMessages, useStudents, useHacking, useTheme } from '../../../../context'
+import { Student } from '../../../../interfaces/Student'
 import { useRef } from 'react'
-import PropTypes from 'prop-types';
 
-ExpelButton.propTypes = {
-  student: PropTypes.object
+interface ExpelButtonProps {
+  student: Student
 }
 
-export default function ExpelButton({ student }) {
+export default function ExpelButton({ student }: ExpelButtonProps) {
   const { curseTheSystem, expulsionAttempts, incrementExpulsionAttempts } = useHacking()
   const { addMessage } = useMessages()
   const { dispatch } = useStudents()
   const { theme } = useTheme()
-  const button = useRef(null)
-  const howler = useRef(null)
+  const button = useRef<HTMLButtonElement>(null)
+  const howler = useRef<HTMLImageElement>(null)
 
   function expelStudent() {
-    if (student.firstName === 'Malthe') {
+    if (button.current && student.firstName === 'Malthe') {
       button.current.classList.add('shake')      
   
       if (expulsionAttempts === 1) {
@@ -31,7 +31,7 @@ export default function ExpelButton({ student }) {
         addMessage('curse')
         curseTheSystem()
       }
-    } else {
+    } else if (howler.current) {
       howler.current.classList.add('howler')
     }
   }
@@ -41,7 +41,7 @@ export default function ExpelButton({ student }) {
       ref={button}
       onClick={expelStudent}
       disabled={student.expelled}
-      onAnimationEnd={() => button.current.classList.remove('shake')}
+      onAnimationEnd={() => button.current?.classList.remove('shake')}
       className={`bg-${theme}-accent text-${theme}-dark border-${theme}-dark` + ' border-2 p-2 flex justify-between relative sm:col-span-2 md:col-span-1'}
     >
       <p>{ student.expelled ? 'Expelled' : 'Expel Student' }</p>
