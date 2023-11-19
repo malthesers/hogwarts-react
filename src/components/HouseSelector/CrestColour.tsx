@@ -1,11 +1,15 @@
-import PropTypes from 'prop-types';
+import { House } from "../../interfaces/House"
 
-CrestColour.propTypes = {
-  house: PropTypes.string
+interface CrestColourProps {
+  house: House
 }
 
-export default function CrestColour({ house }) {
-  const colours = {
+type Colours = {
+  [key in House]?: string
+}
+
+export default function CrestColour({ house }: CrestColourProps) {
+  const colours:Colours = {
     gryffindor: 'red',
     slytherin: 'green',
     hufflepuff: 'yellow',
