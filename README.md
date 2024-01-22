@@ -1,8 +1,11 @@
-# <img src="/public/images/crests/hogwarts.svg" alt="hogwarts crest" width="30" align="center"> Hogwarts (React)
+<h1 align="center">
+  <img src="/public/images/crests/hogwarts.svg" alt="hogwarts crest" width="20%">
+  <p>Hogwarts (React)</p>
+</h1>
 
-Assume the role of a Hogwarts system administrator [right here](https://malthesers.github.io/hogwarts-react).
+<p align="center">Assume the role of a Hogwarts system administrator <a href="https://malthesers.github.io/hogwarts-react">right here</a>.</p>
 
-Or visit the [original](https://github.com/malthesers/hogwarts). Or the [Vue](https://github.com/malthesers/hogwarts-vue) clone.
+<p align="center">Or visit the <a href="https://github.com/malthesers/hogwarts">original</a>. Or the <a href="https://github.com/malthesers/hogwarts-vue">Vue</a> clone.</p>
 
 ## 📋 Instructions
 
